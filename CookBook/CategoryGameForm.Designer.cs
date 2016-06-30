@@ -168,6 +168,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CategoryGameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CategoryGameForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbSoup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBakery)).EndInit();

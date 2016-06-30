@@ -33,5 +33,17 @@ namespace CookBook
             mainForm.Show();
             this.Hide();
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AuthorizeForm_Load(object sender, EventArgs e)
+        {
+            this.AllowTransparency = true;
+            this.BackColor = Color.Bisque;
+            this.TransparencyKey = this.BackColor;
+        }
     }
 }

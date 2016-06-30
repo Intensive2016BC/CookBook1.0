@@ -41,9 +41,10 @@
             // 
             this.btnGame.FlatAppearance.BorderSize = 0;
             this.btnGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGame.Location = new System.Drawing.Point(12, 64);
+            this.btnGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnGame.Location = new System.Drawing.Point(12, 139);
             this.btnGame.Name = "btnGame";
-            this.btnGame.Size = new System.Drawing.Size(260, 23);
+            this.btnGame.Size = new System.Drawing.Size(260, 39);
             this.btnGame.TabIndex = 0;
             this.btnGame.Text = "Начать играть";
             this.btnGame.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -55,11 +56,12 @@
             this.btnCookBook.FlatAppearance.BorderSize = 0;
             this.btnCookBook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnCookBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCookBook.Location = new System.Drawing.Point(12, 93);
+            this.btnCookBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCookBook.Location = new System.Drawing.Point(12, 184);
             this.btnCookBook.Name = "btnCookBook";
-            this.btnCookBook.Size = new System.Drawing.Size(260, 23);
+            this.btnCookBook.Size = new System.Drawing.Size(282, 34);
             this.btnCookBook.TabIndex = 1;
-            this.btnCookBook.Text = "Посмтреть книгу рецептов";
+            this.btnCookBook.Text = "Посмотреть книгу рецептов";
             this.btnCookBook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCookBook.UseVisualStyleBackColor = true;
             this.btnCookBook.Click += new System.EventHandler(this.btnCookBook_Click);
@@ -68,9 +70,10 @@
             // 
             this.btnUserChange.FlatAppearance.BorderSize = 0;
             this.btnUserChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserChange.Location = new System.Drawing.Point(12, 122);
+            this.btnUserChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUserChange.Location = new System.Drawing.Point(12, 224);
             this.btnUserChange.Name = "btnUserChange";
-            this.btnUserChange.Size = new System.Drawing.Size(271, 23);
+            this.btnUserChange.Size = new System.Drawing.Size(271, 34);
             this.btnUserChange.TabIndex = 2;
             this.btnUserChange.Text = "Сменить пользователя";
             this.btnUserChange.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -80,27 +83,30 @@
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
+            this.lbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbUserName.Location = new System.Drawing.Point(20, 9);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(35, 13);
+            this.lbUserName.Size = new System.Drawing.Size(76, 25);
             this.lbUserName.TabIndex = 3;
             this.lbUserName.Text = "label1";
             // 
             // lbUserPoints
             // 
             this.lbUserPoints.AutoSize = true;
-            this.lbUserPoints.Location = new System.Drawing.Point(20, 22);
+            this.lbUserPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbUserPoints.Location = new System.Drawing.Point(22, 76);
             this.lbUserPoints.Name = "lbUserPoints";
-            this.lbUserPoints.Size = new System.Drawing.Size(35, 13);
+            this.lbUserPoints.Size = new System.Drawing.Size(60, 24);
             this.lbUserPoints.TabIndex = 4;
             this.lbUserPoints.Text = "label2";
             // 
             // lbUserLevel
             // 
             this.lbUserLevel.AutoSize = true;
-            this.lbUserLevel.Location = new System.Drawing.Point(61, 9);
+            this.lbUserLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbUserLevel.Location = new System.Drawing.Point(22, 46);
             this.lbUserLevel.Name = "lbUserLevel";
-            this.lbUserLevel.Size = new System.Drawing.Size(35, 13);
+            this.lbUserLevel.Size = new System.Drawing.Size(60, 24);
             this.lbUserLevel.TabIndex = 5;
             this.lbUserLevel.Text = "label3";
             // 
@@ -108,9 +114,10 @@
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(12, 151);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClose.Location = new System.Drawing.Point(12, 264);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(271, 27);
+            this.btnClose.Size = new System.Drawing.Size(271, 32);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Выход";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 259);
+            this.ClientSize = new System.Drawing.Size(425, 308);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lbUserLevel);
             this.Controls.Add(this.lbUserPoints);

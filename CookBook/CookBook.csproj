@@ -61,12 +61,6 @@
     <Compile Include="CategoryGameForm.Designer.cs">
       <DependentUpon>CategoryGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CategoryGameForm.resx">
       <DependentUpon>CategoryGameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
@@ -197,6 +188,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1467236107_Medal-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tarelka_40330006A05.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

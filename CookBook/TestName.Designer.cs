@@ -64,8 +64,10 @@
             // 
             // btnAnswer
             // 
+            this.btnAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAnswer.Location = new System.Drawing.Point(159, 299);
+            this.btnAnswer.Location = new System.Drawing.Point(159, 297);
             this.btnAnswer.Name = "btnAnswer";
             this.btnAnswer.Size = new System.Drawing.Size(119, 47);
             this.btnAnswer.TabIndex = 3;
@@ -77,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 358);
+            this.ClientSize = new System.Drawing.Size(433, 356);
             this.Controls.Add(this.btnAnswer);
             this.Controls.Add(this.cbVars);
             this.Controls.Add(this.pbImage);

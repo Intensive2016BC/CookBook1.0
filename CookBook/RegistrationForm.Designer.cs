@@ -36,9 +36,10 @@
             // 
             this.btnRegistration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistration.Location = new System.Drawing.Point(91, 103);
+            this.btnRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRegistration.Location = new System.Drawing.Point(12, 97);
             this.btnRegistration.Name = "btnRegistration";
-            this.btnRegistration.Size = new System.Drawing.Size(87, 39);
+            this.btnRegistration.Size = new System.Drawing.Size(260, 39);
             this.btnRegistration.TabIndex = 0;
             this.btnRegistration.Text = "Зарегистрироваться";
             this.btnRegistration.UseVisualStyleBackColor = true;
@@ -48,17 +49,17 @@
             // 
             this.tbUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbUserName.Location = new System.Drawing.Point(12, 35);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(260, 20);
+            this.tbUserName.Size = new System.Drawing.Size(260, 29);
             this.tbUserName.TabIndex = 1;
-            this.tbUserName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 186);
+            this.ClientSize = new System.Drawing.Size(284, 148);
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.btnRegistration);
             this.Name = "RegistrationForm";

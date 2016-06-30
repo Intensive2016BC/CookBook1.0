@@ -17,11 +17,6 @@ namespace CookBook
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             UserManager userManager = new UserManager();

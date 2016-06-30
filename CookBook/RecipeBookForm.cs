@@ -61,7 +61,9 @@ namespace CookBook
                 rtbIngredients.Text = "";
                 for (int i = 0; i < recipes[Index].Ingredients.Count; i++)
                 {
-                    rtbIngredients.Text += recipes[Index].Ingredients[i] + "\n";
+                    if (i != recipes[Index].Ingredients.Count - 1) rtbIngredients.Text += recipes[Index].Ingredients[i] + "\n";
+                    else
+                        rtbIngredients.Text += recipes[Index].Ingredients[i];
                 }
                 rtbRecipe.Text = recipes[Index].Description.Replace("--", "\n");
             }

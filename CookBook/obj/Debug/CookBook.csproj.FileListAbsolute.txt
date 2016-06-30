@@ -16,3 +16,20 @@ C:\Users\users\Documents\Visual Studio 2015\Projects\CookBook\CookBook\obj\Debug
 C:\Users\users\Documents\Visual Studio 2015\Projects\CookBook\CookBook\obj\Debug\CookBook.AuthorizeForm.resources
 C:\Users\users\Documents\Visual Studio 2015\Projects\CookBook\CookBook\obj\Debug\CookBook.Menu.resources
 C:\Users\users\Documents\Visual Studio 2015\Projects\CookBook\CookBook\obj\Debug\CookBook.RegistrationForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.exe
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.pdb
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\bin\Debug\CookBook.exe
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\bin\Debug\CookBook.pdb
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.csprojResolveAssemblyReference.cache
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.AuthorizeForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.CategoriesForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.CategoryGameForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.GameForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.LevelGameForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.Menu.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.Properties.Resources.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.RecipeBookForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.RegistrationForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.TestIngredients.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.TestName.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.csproj.GenerateResource.Cache

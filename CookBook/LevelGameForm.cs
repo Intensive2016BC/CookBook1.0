@@ -13,11 +13,12 @@ namespace CookBook
 {
     public partial class LevelGameForm : Form
     {
-        public LevelGameForm(int level, string user)
+        public LevelGameForm(int level, string user, GameForm gform)
         {
             InitializeComponent();
             Level = level;
             User = user;
+            this.gform = gform;
             List<Label> labels = new List<Label>();
             labels.Add(Level1);
             labels.Add(Level2);
@@ -32,94 +33,42 @@ namespace CookBook
                 }
             }
         }
+        GameForm gform;
         string User;
         int Level;
 
         private void Level1_Click(object sender, EventArgs e)
         {
-            RecipeManager recipesManager = new RecipeManager();
-            List<Recipe> recipes = recipesManager.GetList(AppDomain.CurrentDomain.BaseDirectory + "Recipes.txt");
-            for (int i = 0; i < recipes.Count; i++)
-            {
-                if (recipes[i].Level != 1)
-                {
-                    recipes.RemoveAt(i);
-                    i--;
-                }
-            }
-            TestManager testManager = new TestManager();
-            int count = 0;
-            int test = recipes.Count;
-            if (test > 10) test = 10;
-            for (int i = 0; i < test; i++)
-            {
-                Random rand = new Random();
-                int index = rand.Next(0, recipes.Count);
-                if (testManager.CreateTestName(recipes, index))
-                    count++;
-            }
-            MessageBox.Show(count.ToString());
+            StartTest(1);
         }
 
         private void Level2_Click(object sender, EventArgs e)
         {
-            RecipeManager recipesManager = new RecipeManager();
-            List<Recipe> recipes = recipesManager.GetList(AppDomain.CurrentDomain.BaseDirectory + "Recipes.txt");
-            for (int i = 0; i < recipes.Count; i++)
-            {
-                if (recipes[i].Level != 2)
-                {
-                    recipes.RemoveAt(i);
-                    i--;
-                }
-            }
-            TestManager testManager = new TestManager();
-            int count = 0;
-            int test = recipes.Count;
-            if (test > 10) test = 10;
-            for (int i = 0; i < test; i++)
-            {
-                Random rand = new Random();
-                int index = rand.Next(0, recipes.Count);
-                if (testManager.CreateTestName(recipes, index))
-                    count++;
-            }
-            MessageBox.Show(count.ToString());
+            StartTest(2);
         }
 
         private void Level3_Click(object sender, EventArgs e)
         {
-            RecipeManager recipesManager = new RecipeManager();
-            List<Recipe> recipes = recipesManager.GetList(AppDomain.CurrentDomain.BaseDirectory + "Recipes.txt");
-            for (int i = 0; i < recipes.Count; i++)
-            {
-                if (recipes[i].Level != 3)
-                {
-                    recipes.RemoveAt(i);
-                    i--;
-                }
-            }
-            TestManager testManager = new TestManager();
-            int count = 0;
-            int test = recipes.Count;
-            if (test > 10) test = 10;
-            for (int i = 0; i < test; i++)
-            {
-                Random rand = new Random();
-                int index = rand.Next(0, recipes.Count);
-                if (testManager.CreateTestName(recipes, index))
-                    count++;
-            }
-            MessageBox.Show(count.ToString());
+            StartTest(3);
         }
 
         private void Level4_Click(object sender, EventArgs e)
         {
+            StartTest(4);
+        }
+
+        private void Level5_Click(object sender, EventArgs e)
+        {
+            StartTest(5);
+        }
+
+        private void StartTest(int level)
+        {
             RecipeManager recipesManager = new RecipeManager();
             List<Recipe> recipes = recipesManager.GetList(AppDomain.CurrentDomain.BaseDirectory + "Recipes.txt");
             for (int i = 0; i < recipes.Count; i++)
             {
-                if (recipes[i].Level != 4)
+                if (recipes[i].Level != level)
                 {
                     recipes.RemoveAt(i);
                     i--;
@@ -139,30 +88,9 @@ namespace CookBook
             MessageBox.Show(count.ToString());
         }
 
-        private void Level5_Click(object sender, EventArgs e)
+        private void LevelGameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            RecipeManager recipesManager = new RecipeManager();
-            List<Recipe> recipes = recipesManager.GetList(AppDomain.CurrentDomain.BaseDirectory + "Recipes.txt");
-            for (int i = 0; i < recipes.Count; i++)
-            {
-                if (recipes[i].Level != 5)
-                {
-                    recipes.RemoveAt(i);
-                    i--;
-                }
-            }
-            TestManager testManager = new TestManager();
-            int count = 0;
-            int test = recipes.Count;
-            if (test > 10) test = 10;
-            for (int i = 0; i < test; i++)
-            {
-                Random rand = new Random();
-                int index = rand.Next(0, recipes.Count);
-                if (testManager.CreateTestName(recipes, index))
-                    count++;
-            }
-            MessageBox.Show(count.ToString());
+            gform.Show();
         }
     }
 }

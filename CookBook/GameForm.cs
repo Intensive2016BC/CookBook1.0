@@ -24,14 +24,16 @@ namespace CookBook
 
         private void buttonCategory_Click(object sender, EventArgs e)
         {
-            CategoryGameForm cgform = new CategoryGameForm(Level, User);
+            CategoryGameForm cgform = new CategoryGameForm(Level, User, this);
             cgform.Show();
+            this.Hide();
         }
 
         private void buttonLevel_Click(object sender, EventArgs e)
         {
-            LevelGameForm lgform = new LevelGameForm(Level, User);
+            LevelGameForm lgform = new LevelGameForm(Level, User, this);
             lgform.Show();
+            this.Hide();
         }
 
         private void buttonRandom_Click(object sender, EventArgs e)
