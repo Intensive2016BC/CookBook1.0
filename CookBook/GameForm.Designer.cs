@@ -36,8 +36,10 @@
             // 
             // buttonCategory
             // 
+            this.buttonCategory.FlatAppearance.BorderSize = 0;
+            this.buttonCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCategory.Location = new System.Drawing.Point(12, 12);
+            this.buttonCategory.Location = new System.Drawing.Point(12, 24);
             this.buttonCategory.Name = "buttonCategory";
             this.buttonCategory.Size = new System.Drawing.Size(238, 42);
             this.buttonCategory.TabIndex = 0;
@@ -47,6 +49,8 @@
             // 
             // buttonLevel
             // 
+            this.buttonLevel.FlatAppearance.BorderSize = 0;
+            this.buttonLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLevel.Location = new System.Drawing.Point(12, 72);
             this.buttonLevel.Name = "buttonLevel";
@@ -58,8 +62,10 @@
             // 
             // buttonRandom
             // 
+            this.buttonRandom.FlatAppearance.BorderSize = 0;
+            this.buttonRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRandom.Location = new System.Drawing.Point(12, 132);
+            this.buttonRandom.Location = new System.Drawing.Point(12, 121);
             this.buttonRandom.Name = "buttonRandom";
             this.buttonRandom.Size = new System.Drawing.Size(238, 42);
             this.buttonRandom.TabIndex = 2;

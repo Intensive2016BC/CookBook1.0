@@ -45,6 +45,52 @@ namespace CookBook.Managers
             return true;
         }
 
+        public void ChangeUserPoints(string username, int points, List<int>recipes)
+        {
+            List<User> users = GetList();
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users[i].Login == username)
+                {
+                    users[i].Points += points;
+                    for (int j = 0; j < recipes.Count; j++)
+                    {
+                        if (!users[i].DoneIds.Contains(recipes[j]))
+                        users[i].DoneIds.Add(recipes[j]);
+                    }
+                }
+            }
+            WriteUsers(users);
+        }
+
+        public void WriteUsers(List<User>users)
+        {
+            using (StreamWriter sw = File.CreateText(Path))
+            {
+                for (int i = 0; i < users.Count; i++)
+                {
+                    sw.WriteLine(users[i].Login);
+                    sw.WriteLine(users[i].Pass);
+                    if (users[i].IsAdmin)sw.WriteLine("1");
+                    else sw.WriteLine("0");
+                    sw.WriteLine(users[i].Points);
+                    for(int j = 0; j < users[i].DoneIds.Count; j++)
+                    {
+                        if (j != users[i].DoneIds.Count - 1)
+                            sw.Write(users[i].DoneIds[j].ToString() + ",");
+                        else
+                        {
+                            if (i != users.Count-1)
+                            {
+                                sw.WriteLine(users[i].DoneIds[j].ToString());
+                            }
+                            else sw.Write(users[i].DoneIds[j].ToString());
+                        }
+                    }
+                }
+            }
+        }
+
         public void CreateNewUser(string userName)
         {
             List<int> ids = new List<int>();
@@ -58,7 +104,7 @@ namespace CookBook.Managers
                     sw.WriteLine(newuser.Pass);
                     sw.WriteLine("0");
                     sw.WriteLine("0");
-                    sw.Write("1");
+                    sw.Write("0");
                 }
                 MessageBox.Show("Пользователь успешно добавлен!");
             }
@@ -72,6 +118,7 @@ namespace CookBook.Managers
         {
             int Level = (int)Math.Log(points / 10, 2)+1;
             if (points < 10) Level = 1;
+            if (Level > 5) Level = 5;
             return Level;
         }
     }

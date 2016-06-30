@@ -55,11 +55,13 @@
             // 
             // cbVars
             // 
+            this.cbVars.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVars.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbVars.FormattingEnabled = true;
             this.cbVars.Location = new System.Drawing.Point(12, 252);
             this.cbVars.Name = "cbVars";
             this.cbVars.Size = new System.Drawing.Size(409, 28);
+            this.cbVars.Sorted = true;
             this.cbVars.TabIndex = 2;
             // 
             // btnAnswer
