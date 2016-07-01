@@ -35,6 +35,7 @@
             this.lbUserPoints = new System.Windows.Forms.Label();
             this.lbUserLevel = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGame
@@ -124,11 +125,26 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAdmin.Location = new System.Drawing.Point(12, 302);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(271, 32);
+            this.btnAdmin.TabIndex = 7;
+            this.btnAdmin.Text = "Администрирование";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 308);
+            this.ClientSize = new System.Drawing.Size(425, 355);
+            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lbUserLevel);
             this.Controls.Add(this.lbUserPoints);
@@ -155,5 +171,6 @@
         private System.Windows.Forms.Label lbUserPoints;
         private System.Windows.Forms.Label lbUserLevel;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }

@@ -19,23 +19,24 @@ namespace CookBook
             Level = level;
             User = user;
             this.gform = gform;
-            List<Label> labels = new List<Label>();
-            labels.Add(Level1);
-            labels.Add(Level2);
-            labels.Add(Level3);
-            labels.Add(Level4);
-            labels.Add(Level5);
-            for (int i = 0; i < labels.Count; i++)
+            List<Button> btns = new List<Button>();
+            btns.Add(Level1);
+            btns.Add(Level2);
+            btns.Add(Level3);
+            btns.Add(Level4);
+            btns.Add(Level5);
+            for (int i = 0; i < btns.Count; i++)
             {
                 if (i+1 > Level)
                 {
-                    labels[i].Enabled = false;
+                    btns[i].Enabled = false;
                 }
             }
         }
         GameForm gform;
         string User;
         int Level;
+        bool closeAfterGame = false;
 
         private void Level1_Click(object sender, EventArgs e)
         {
@@ -78,42 +79,15 @@ namespace CookBook
                     indexes.Add(i);
             }
             TestManager testManager = new TestManager();
-            int count = 0;
-            List<int> DoneRecipes = new List<int>();
-            int test = recipes.Count;
-            if (test > 10) test = 10;
-            for (int i = 0; i < test; i++)
-            {
-                Random rand = new Random();
-                int index = rand.Next(0, indexes.Count);
-                Random TestType = new Random();
-                int Type = TestType.Next(1, 3);
-                if (Type == 1)
-                {
-                    if (testManager.CreateTestIngred(recipes[indexes[index]]))
-                    {
-                        count += recipes[indexes[index]].Points;
-                        DoneRecipes.Add(recipes[indexes[index]].Id);
-                    }
-                }
-                if (Type == 2)
-                {
-                    if (testManager.CreateTestName(recipes, indexes[index]))
-                    {
-                        count += recipes[indexes[index]].Points;
-                        DoneRecipes.Add(recipes[indexes[index]].Id);
-                    }
-                }
-                indexes.RemoveAt(index);
-            }
-            MessageBox.Show(count.ToString());
-            UserManager userManager = new UserManager();
-            userManager.ChangeUserPoints(User, count, DoneRecipes);
+            bool GameEnd = testManager.StartGame(recipes, indexes, User);
+            if (GameEnd) gform.ReturnToMenu();
+            closeAfterGame = true;
+            this.Close();
         }
 
         private void LevelGameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            gform.Show();
+            if (!closeAfterGame) gform.Show();
         }
     }
 }

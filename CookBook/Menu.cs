@@ -19,6 +19,14 @@ namespace CookBook
             InitializeComponent();
             UserName = username;
             this.auth = auth;
+            UserManager userManager = new UserManager();
+            List<User> users = userManager.GetList();
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users[i].Login == username)
+                    if (!users[i].IsAdmin)
+                        btnAdmin.Visible = false;
+            }
         }
         AuthorizeForm auth;
 
@@ -59,6 +67,12 @@ namespace CookBook
             CategoriesForm cform = new CategoriesForm(int.Parse(lbUserLevel.Text), this);
             cform.Show();
             this.Hide();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            AdminForm aform = new AdminForm();
+            aform.Show();
         }
     }
 }

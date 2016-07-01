@@ -33,6 +33,8 @@
             this.lbRecipeIngreds = new System.Windows.Forms.ListBox();
             this.lbIngreds = new System.Windows.Forms.ListBox();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnExitGame = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelInstruction
@@ -92,16 +94,41 @@
             this.lblName.TabIndex = 7;
             this.lblName.Text = "Блюдо: ";
             // 
+            // btnExitGame
+            // 
+            this.btnExitGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnExitGame.Location = new System.Drawing.Point(464, 275);
+            this.btnExitGame.Name = "btnExitGame";
+            this.btnExitGame.Size = new System.Drawing.Size(154, 43);
+            this.btnExitGame.TabIndex = 8;
+            this.btnExitGame.Text = "Выйти из игры";
+            this.btnExitGame.UseVisualStyleBackColor = true;
+            this.btnExitGame.Click += new System.EventHandler(this.btnExitGame_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCancel.Location = new System.Drawing.Point(302, 275);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(156, 43);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Отменить игру";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // TestIngredients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 333);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lbIngreds);
             this.Controls.Add(this.lbRecipeIngreds);
             this.Controls.Add(this.btnAnswer);
             this.Controls.Add(this.labelInstruction);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TestIngredients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
@@ -116,5 +143,7 @@
         private System.Windows.Forms.ListBox lbRecipeIngreds;
         private System.Windows.Forms.ListBox lbIngreds;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnExitGame;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

@@ -23,6 +23,7 @@ namespace CookBook
         GameForm gform;
         string User;
         int Level;
+        bool closeAfterGame = false;
 
         private void pbMainMeal_Click(object sender, EventArgs e)
         {
@@ -65,42 +66,15 @@ namespace CookBook
                     indexes.Add(i);
             }
             TestManager testManager = new TestManager();
-            int count = 0;
-            List<int> DoneRecipes = new List<int>();
-            int test = recipes.Count;
-            if (test > 10) test = 10;
-            for (int i = 0; i < test; i++)
-            {
-                Random rand = new Random();
-                int index = rand.Next(0, indexes.Count);
-                Random TestType = new Random();
-                int Type = TestType.Next(1, 3);
-                if (Type == 1)
-                {
-                    if (testManager.CreateTestIngred(recipes[indexes[index]]))
-                    {
-                        count += recipes[indexes[index]].Points;
-                        DoneRecipes.Add(recipes[indexes[index]].Id);
-                    }
-                }
-                if (Type == 2)
-                {
-                    if (testManager.CreateTestName(recipes, indexes[index]))
-                    {
-                        count += recipes[indexes[index]].Points;
-                        DoneRecipes.Add(recipes[indexes[index]].Id);
-                    }
-                }
-                indexes.RemoveAt(index);
-            }
-            MessageBox.Show(count.ToString());
-            UserManager userManager = new UserManager();
-            userManager.ChangeUserPoints(User, count, DoneRecipes);
+            bool GameEnd = testManager.StartGame(recipes, indexes, User);
+            if (GameEnd) gform.ReturnToMenu();
+            closeAfterGame = true;
+            this.Close();
         }
 
         private void CategoryGameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            gform.Show();
+            if (!closeAfterGame) gform.Show();
         }
     }
 }

@@ -44,6 +44,7 @@
             this.buttonCategory.Size = new System.Drawing.Size(238, 42);
             this.buttonCategory.TabIndex = 0;
             this.buttonCategory.Text = "Выбрать категорию";
+            this.buttonCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCategory.UseVisualStyleBackColor = true;
             this.buttonCategory.Click += new System.EventHandler(this.buttonCategory_Click);
             // 
@@ -57,6 +58,7 @@
             this.buttonLevel.Size = new System.Drawing.Size(238, 43);
             this.buttonLevel.TabIndex = 1;
             this.buttonLevel.Text = "Выбрать уровень";
+            this.buttonLevel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLevel.UseVisualStyleBackColor = true;
             this.buttonLevel.Click += new System.EventHandler(this.buttonLevel_Click);
             // 
@@ -70,12 +72,13 @@
             this.buttonRandom.Size = new System.Drawing.Size(238, 42);
             this.buttonRandom.TabIndex = 2;
             this.buttonRandom.Text = "Случайная игра";
+            this.buttonRandom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRandom.UseVisualStyleBackColor = true;
             this.buttonRandom.Click += new System.EventHandler(this.buttonRandom_Click);
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(418, 12);
+            this.buttonClose.Location = new System.Drawing.Point(413, 24);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(42, 42);
             this.buttonClose.TabIndex = 3;

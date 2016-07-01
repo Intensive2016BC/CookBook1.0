@@ -33,3 +33,5 @@ C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.Registration
 C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.TestIngredients.resources
 C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.TestName.resources
 C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.csproj.GenerateResource.Cache
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.AdminForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.ResultForm.resources

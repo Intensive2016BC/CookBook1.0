@@ -17,8 +17,9 @@ namespace CookBook
         public List<string> Ingredients { get; set; }
         public List<string> RecipeIngredients { get; set; }
         public int countWrong;
-        public bool right;
         public bool change = false;
+        public bool exitGame = false;
+        public bool cancelGame = false;
 
         public TestIngredients(Recipe recipe)
         {
@@ -53,8 +54,6 @@ namespace CookBook
 
         private void btnAnswer_Click(object sender, EventArgs e)
         {
-            if (countWrong == 0) right = true;
-            else right = false;
             DialogResult = DialogResult.OK;
         }
 
@@ -75,6 +74,18 @@ namespace CookBook
                     countWrong--;
                 }
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            cancelGame = true;
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnExitGame_Click(object sender, EventArgs e)
+        {
+            exitGame = true;
+            DialogResult = DialogResult.OK;
         }
     }
 }

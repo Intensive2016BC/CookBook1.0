@@ -41,7 +41,7 @@
             // 
             // pbForward
             // 
-            this.pbForward.BackgroundImage = global::CookBook.Properties.Resources._1467236127_back2;
+            this.pbForward.BackgroundImage = global::CookBook.Properties.Resources.forward;
             this.pbForward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbForward.Location = new System.Drawing.Point(597, 334);
             this.pbForward.Name = "pbForward";
@@ -52,7 +52,7 @@
             // 
             // pbBack
             // 
-            this.pbBack.BackgroundImage = global::CookBook.Properties.Resources._1467236127_back;
+            this.pbBack.BackgroundImage = global::CookBook.Properties.Resources.back;
             this.pbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbBack.Location = new System.Drawing.Point(12, 334);
             this.pbBack.Name = "pbBack";

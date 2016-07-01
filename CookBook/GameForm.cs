@@ -54,40 +54,16 @@ namespace CookBook
                     indexes.Add(i);
             }
             TestManager testManager = new TestManager();
-            int count = 0;
-            List<int> DoneRecipes = new List<int>();
-            int test = recipes.Count;
-            if (test > 10) test = 10;
-            for (int i = 0; i < test; i++)
-            {
-                Random rand = new Random();
-                int index = rand.Next(0, indexes.Count);
-                Random TestType = new Random();
-                int Type = TestType.Next(1, 3);
-                if (Type == 1)
-                {
-                    if (testManager.CreateTestIngred(recipes[indexes[index]]))
-                    {
-                        count += recipes[indexes[index]].Points;
-                        DoneRecipes.Add(recipes[indexes[index]].Id);
-                    }
-                }
-                if (Type == 2)
-                {
-                    if (testManager.CreateTestName(recipes, indexes[index]))
-                    {
-                        count += recipes[indexes[index]].Points;
-                        DoneRecipes.Add(recipes[indexes[index]].Id);
-                    }
-                }
-                indexes.RemoveAt(index);
-            }
-            MessageBox.Show(count.ToString());
-            UserManager userManager = new UserManager();
-            userManager.ChangeUserPoints(User, count, DoneRecipes);
+            if (testManager.StartGame(recipes, indexes, User))
+                ReturnToMenu();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
+        {
+            ReturnToMenu();
+        }
+
+        public void ReturnToMenu()
         {
             menu.Show();
             menu.ChangeLabelLevel();

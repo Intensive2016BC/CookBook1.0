@@ -44,6 +44,8 @@ namespace CookBook
             this.AllowTransparency = true;
             this.BackColor = Color.Bisque;
             this.TransparencyKey = this.BackColor;
+            btnLogIn.BackColor = Color.Transparent;
+            buttonExit.BackColor = Color.Transparent;
         }
     }
 }

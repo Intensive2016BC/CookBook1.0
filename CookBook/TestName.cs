@@ -24,11 +24,25 @@ namespace CookBook
         }
         string RName;
         public bool right;
+        public bool exitGame = false;
+        public bool cancelGame = false;
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (cbVars.Text == RName)
                 right = true;
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            cancelGame = true;
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnExitGame_Click(object sender, EventArgs e)
+        {
+            exitGame = true;
             DialogResult = DialogResult.OK;
         }
     }

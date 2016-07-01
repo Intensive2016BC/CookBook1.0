@@ -63,39 +63,9 @@ namespace CookBook.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1467236107_Medal_2 {
-            get {
-                object obj = ResourceManager.GetObject("1467236107_Medal-2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1467236127_back {
-            get {
-                object obj = ResourceManager.GetObject("1467236127_back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1467236127_back2 {
-            get {
-                object obj = ResourceManager.GetObject("1467236127_back2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _15 {
             get {
-                object obj = ResourceManager.GetObject("15", resourceCulture);
+                object obj = ResourceManager.GetObject("_15", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +75,7 @@ namespace CookBook.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _24 {
             get {
-                object obj = ResourceManager.GetObject("24", resourceCulture);
+                object obj = ResourceManager.GetObject("_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +85,7 @@ namespace CookBook.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _3 {
             get {
-                object obj = ResourceManager.GetObject("3", resourceCulture);
+                object obj = ResourceManager.GetObject("_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +95,7 @@ namespace CookBook.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _31 {
             get {
-                object obj = ResourceManager.GetObject("31", resourceCulture);
+                object obj = ResourceManager.GetObject("_31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +105,7 @@ namespace CookBook.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _40 {
             get {
-                object obj = ResourceManager.GetObject("40", resourceCulture);
+                object obj = ResourceManager.GetObject("_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +113,9 @@ namespace CookBook.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap o {
+        internal static System.Drawing.Bitmap back {
             get {
-                object obj = ResourceManager.GetObject("o", resourceCulture);
+                object obj = ResourceManager.GetObject("back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +123,39 @@ namespace CookBook.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Tarelka_40330006A05 {
+        internal static System.Drawing.Bitmap close {
             get {
-                object obj = ResourceManager.GetObject("Tarelka_40330006A05", resourceCulture);
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forward {
+            get {
+                object obj = ResourceManager.GetObject("forward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plate {
+            get {
+                object obj = ResourceManager.GetObject("plate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plate1 {
+            get {
+                object obj = ResourceManager.GetObject("plate1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
