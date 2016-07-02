@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CookBook</RootNamespace>
     <AssemblyName>CookBook</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,10 +32,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -80,6 +87,7 @@
       <DependentUpon>LevelGameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\CategoryManager.cs" />
+    <Compile Include="Managers\DatabaseManager.cs" />
     <Compile Include="Managers\RecipeManager.cs" />
     <Compile Include="Managers\TestManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
@@ -111,6 +119,12 @@
     </Compile>
     <Compile Include="ResultForm.Designer.cs">
       <DependentUpon>ResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceForm.Designer.cs">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TestIngredients.cs">
       <SubType>Form</SubType>
@@ -164,12 +178,16 @@
     <EmbeddedResource Include="ResultForm.resx">
       <DependentUpon>ResultForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ServiceForm.resx">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestIngredients.resx">
       <DependentUpon>TestIngredients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestName.resx">
       <DependentUpon>TestName.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

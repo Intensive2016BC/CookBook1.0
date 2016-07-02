@@ -19,8 +19,14 @@ namespace CookBook
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
+            if (tbUserName.Text == "" || tbUserName.Text.Length > 25)
+            {
+                MessageBox.Show("Введено слишком короткое или слишком длинное имя!");
+                return;
+            } 
             UserManager userManager = new UserManager();
             userManager.CreateNewUser(tbUserName.Text);
+            this.Close();
         }
     }
 }

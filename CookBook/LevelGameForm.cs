@@ -66,7 +66,7 @@ namespace CookBook
         private void StartTest(int level)
         {
             RecipeManager recipesManager = new RecipeManager();
-            List<Recipe> recipes = recipesManager.GetList(AppDomain.CurrentDomain.BaseDirectory + "Recipes.txt");
+            List<Recipe> recipes = recipesManager.GetList();
             List<int> indexes = new List<int>();
             for (int i = 0; i < recipes.Count; i++)
             {

@@ -4,41 +4,50 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Drawing;
+using System.Data;
 using CookBook.Models;
+using System.Windows.Forms;
 
 namespace CookBook.Managers
 {
     public class RecipeManager
     {
-        public List<Recipe> GetList(string path)
+        public List<Recipe> GetList()
         {
-            List<Recipe> recipes = new List<Recipe>();
-            FileStream fs = new FileStream(path, FileMode.Open);
-            using (StreamReader sr = new StreamReader(fs, Encoding.GetEncoding(1251)))
+            List<Recipe> recipesList = new List<Recipe>();
+            DatabaseManager dbManager = new DatabaseManager();
+            DataTable recipes = dbManager.GetFullList("Recipe");
+            for (int i = 0; i < recipes.Rows.Count; i++)
             {
-                string line;
-                int counter = 0;
-                string[] recipeAttrs = new string[8];
-                while ((line = sr.ReadLine()) != null)
+                byte[] a = (System.Byte[])recipes.Rows[i][1];
+                MemoryStream ms = new MemoryStream(a, 0, a.Length);
+                ms.Write(a, 0, a.Length);
+                Image image = new Bitmap(ms);
+                List<string> ings = new List<string>();
+                string[] ingreds = recipes.Rows[i][3].ToString().Split(',');
+                for (int m = 0; m < ingreds.Length; m++)
                 {
-                    recipeAttrs[counter] = line;
-                    counter++;
-                    if (counter == 8)
-                    {
-                        int id = int.Parse(recipeAttrs[0]);
-                        Image img = Image.FromFile(recipeAttrs[1]);
-                        string name = recipeAttrs[2];
-                        List<string> ingredients = recipeAttrs[3].Split(',').ToList();
-                        string description = recipeAttrs[4];
-                        int lvl = int.Parse(recipeAttrs[5]);
-                        int points = int.Parse(recipeAttrs[6]);
-                        int cId = int.Parse(recipeAttrs[7]);
-                        recipes.Add(new Recipe(id, img, name, ingredients, description, lvl, points, cId));
-                        counter = 0;
-                    }
+                    ings.Add(ingreds[m]);
                 }
-                return recipes;
+                Recipe recipe = new Recipe(Convert.ToInt32(recipes.Rows[i][0]), image, recipes.Rows[i][2].ToString(), ings, recipes.Rows[i][4].ToString(), Convert.ToInt32(recipes.Rows[i][5]), Convert.ToInt32(recipes.Rows[i][6]), Convert.ToInt32(recipes.Rows[i][7]));
+                recipesList.Add(recipe);
             }
+            return recipesList;
+        }
+
+        public List<string> GetWordsFromDescription(Recipe recipe)
+        {
+            List<string> words = new List<string>();
+            string[] array = recipe.Description.Split(',');
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i][0] == '#')
+                {
+                    words.Add(array[i].Trim());
+                    //words.Add(array[i].Trim('#'));
+                }
+            }
+            return words;
         }
     }
 }

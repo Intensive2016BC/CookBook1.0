@@ -28,26 +28,33 @@ namespace CookBook
 
         private void RecipeBookForm_Load(object sender, EventArgs e)
         {
-            RecipeManager recipesManager = new RecipeManager();
-            recipes = recipesManager.GetList(AppDomain.CurrentDomain.BaseDirectory + "Recipes.txt");
-            for (int i = 0; i < recipes.Count; i++)
+            try
             {
-                if (recipes[i].CategoryId != Category || recipes[i].Level > Level)
+                RecipeManager recipesManager = new RecipeManager();
+                recipes = recipesManager.GetList();
+                for (int i = 0; i < recipes.Count; i++)
                 {
-                    recipes.RemoveAt(i);
-                    i--;
+                    if (recipes[i].CategoryId != Category || recipes[i].Level > Level)
+                    {
+                        recipes.RemoveAt(i);
+                        i--;
+                    }
+                }
+                if (recipes.Count!=0)
+                {
+                    pbImage.Image = recipes[0].Image;
+                    labelName.Text = recipes[0].Name;
+                    rtbIngredients.Text = "";
+                    for (int i = 0; i < recipes[0].Ingredients.Count; i++)
+                    {
+                        rtbIngredients.Text += recipes[0].Ingredients[i] + "\n";
+                    }
+                    rtbRecipe.Text = recipes[0].Description.Replace("#", "");
                 }
             }
-            if (recipes[0]!=null)
+            catch(Exception ex)
             {
-                pbImage.Image = recipes[0].Image;
-                labelName.Text = recipes[0].Name;
-                rtbIngredients.Text = "";
-                for (int i = 0; i < recipes[0].Ingredients.Count; i++)
-                {
-                    rtbIngredients.Text += recipes[0].Ingredients[i] + "\n";
-                }
-                rtbRecipe.Text = recipes[0].Description.Replace("--", "\n");
+                MessageBox.Show(ex.Message);
             }
         }
 

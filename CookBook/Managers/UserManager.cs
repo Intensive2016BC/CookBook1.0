@@ -4,35 +4,25 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using CookBook.Models;
+using CookBook.Managers;
 using System.Windows.Forms;
+using System.Data;
 
 namespace CookBook.Managers
 {
     public class UserManager
     {
-        public string Path = AppDomain.CurrentDomain.BaseDirectory + "Users.txt";
         public List<User> GetList()
         {
             List<User> usersList = new List<User>();
-            using (StreamReader sr = new StreamReader(Path))
+            DatabaseManager dbManager = new DatabaseManager();
+            DataTable users = dbManager.GetFullList("User");
+            for (int i = 0; i < users.Rows.Count; i++)
             {
-                string line;
-                int counter = 0;
-                string[] userAttrs = new string[5];
-
-                while ((line = sr.ReadLine()) != null)
-                {
-                    userAttrs[counter] = line;
-                    counter++;
-                    if (counter == 5)
-                    {
-                        List<int> ids = userAttrs[4].Split(',').Select(i => int.Parse(i)).ToList();
-                        usersList.Add(new User(userAttrs[0], userAttrs[1], int.Parse(userAttrs[2]) == 1, int.Parse(userAttrs[3]), ids));
-                        counter = 0;
-                    }
-                }
-                return usersList;
+               User user = new User(users.Rows[i][0].ToString(), users.Rows[i][1].ToString(), Convert.ToBoolean(users.Rows[i][2]), int.Parse(users.Rows[i][3].ToString()), new List<int>());
+               usersList.Add(user);
             }
+            return usersList;
         }
 
         public bool CheckUsers(string userName)
@@ -53,59 +43,24 @@ namespace CookBook.Managers
                 if (users[i].Login == username)
                 {
                     users[i].Points += points;
-                    for (int j = 0; j < recipes.Count; j++)
-                    {
-                        if (!users[i].DoneIds.Contains(recipes[j]))
-                        users[i].DoneIds.Add(recipes[j]);
-                    }
-                }
-            }
-            WriteUsers(users);
-        }
-
-        public void WriteUsers(List<User>users)
-        {
-            using (StreamWriter sw = File.CreateText(Path))
-            {
-                for (int i = 0; i < users.Count; i++)
-                {
-                    sw.WriteLine(users[i].Login);
-                    sw.WriteLine(users[i].Pass);
-                    if (users[i].IsAdmin)sw.WriteLine("1");
-                    else sw.WriteLine("0");
-                    sw.WriteLine(users[i].Points);
-                    for(int j = 0; j < users[i].DoneIds.Count; j++)
-                    {
-                        if (j != users[i].DoneIds.Count - 1)
-                            sw.Write(users[i].DoneIds[j].ToString() + ",");
-                        else
-                        {
-                            if (i != users.Count-1)
-                            {
-                                sw.WriteLine(users[i].DoneIds[j].ToString());
-                            }
-                            else sw.Write(users[i].DoneIds[j].ToString());
-                        }
-                    }
+                    //for (int j = 0; j < recipes.Count; j++)
+                    //{
+                    //    if (!users[i].DoneIds.Contains(recipes[j]))
+                    //    users[i].DoneIds.Add(recipes[j]);
+                    //}
+                    DatabaseManager dbManager = new DatabaseManager();
+                    dbManager.Update("User", "Points", users[i].Points.ToString(), "Login", username);
                 }
             }
         }
 
         public void CreateNewUser(string userName)
         {
-            List<int> ids = new List<int>();
-            User newuser = new User(userName, "123", false, 0, ids);
+            User newuser = new User(userName, "123", false, 0, new List<int>());
             if (CheckUsers(userName))
             {
-                using (StreamWriter sw = File.AppendText(Path))
-                {
-                    sw.WriteLine();
-                    sw.WriteLine(newuser.Login);
-                    sw.WriteLine(newuser.Pass);
-                    sw.WriteLine("0");
-                    sw.WriteLine("0");
-                    sw.Write("0");
-                }
+                DatabaseManager dbManager = new DatabaseManager();
+                dbManager.AddUser(newuser);
                 MessageBox.Show("Пользователь успешно добавлен!");
             }
             else

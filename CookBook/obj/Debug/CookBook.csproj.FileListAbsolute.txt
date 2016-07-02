@@ -35,3 +35,7 @@ C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.TestName.res
 C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.csproj.GenerateResource.Cache
 C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.AdminForm.resources
 C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.ResultForm.resources
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\bin\Debug\CookBook.exe.config
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\bin\Debug\System.Data.SQLite.pdb
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\bin\Debug\System.Data.SQLite.xml
+C:\Users\users\Source\Repos\CookBook1.0\CookBook\obj\Debug\CookBook.ServiceForm.resources

@@ -118,7 +118,7 @@ namespace CookBook.Managers
                     int result = testManager.CreateTestIngred(recipes[indexes[index]]);
                     if (result == -1)
                     {
-                        return true;
+                        return false;
                     }
                     if (result == -2)
                     {
@@ -152,7 +152,7 @@ namespace CookBook.Managers
                     int result = testManager.CreateTestName(recipes, indexes[index]);
                     if (result == -1)
                     {
-                        return true;
+                        return false;
                     }
                     if (result == -2)
                     {
