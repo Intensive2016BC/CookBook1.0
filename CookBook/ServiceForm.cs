@@ -366,7 +366,7 @@ namespace CookBook
                                     }
                                 case "Category":
                                     {
-                                        if (dbManager.CheckId("Name='" + fields[1].Text+"'", entity))
+                                        if (dbManager.CheckId("Name='" + fields[1].Text+"'", entity)&&fields[0].Text!=recordId)
                                         {
                                             throw new Exception("Такое название уже существует!");
                                         }
@@ -376,7 +376,7 @@ namespace CookBook
                                     }
                                 case "Recipe":
                                     {
-                                        if (dbManager.CheckId("Name='" + fields[2].Text+"'", entity))
+                                        if (dbManager.CheckId("Name='" + fields[2].Text+"'", entity)&&fields[0].Text != recordId)
                                         {
                                             throw new Exception("Такое название уже существует!");
                                         }
@@ -390,9 +390,9 @@ namespace CookBook
                                     }
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            InfoForm iform = new InfoForm("Ошибка ввода!");
+                            InfoForm iform = new InfoForm(ex.Message);
                             iform.Show();
                         }
                         break;

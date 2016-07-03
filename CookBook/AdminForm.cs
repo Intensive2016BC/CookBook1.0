@@ -130,12 +130,16 @@ namespace CookBook
                         iform.Show();
                         return;
                     }
-                    if (!dbManager.CheckId("id="+id, entity) && entity !="User")
+                    if (entity != "User")
                     {
-                        InfoForm iform = new InfoForm("ID не существует!");
-                        iform.Show();
-                        return;
+                        if (!dbManager.CheckId("id=" + id, entity))
+                        {
+                            InfoForm iform = new InfoForm("ID не существует!");
+                            iform.Show();
+                            return;
+                        }
                     }
+                    insert.recordId = id;
                     insert.mission = "edit";
                     insert.GetRecordData(id);
                     if (insert.ShowDialog() == DialogResult.OK)
