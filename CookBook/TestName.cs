@@ -26,11 +26,13 @@ namespace CookBook
         public bool right = false;
         public bool exitGame = false;
         public bool cancelGame = false;
+        public bool answer = false;
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (cbVars.Text == RName)
                 right = true;
+            answer = true;
             DialogResult = DialogResult.OK;
         }
 
@@ -48,7 +50,8 @@ namespace CookBook
 
         private void TestName_FormClosing(object sender, FormClosingEventArgs e)
         {
-            right = false;
+            if (!cancelGame && !exitGame && !answer)
+                right = false;
             DialogResult = DialogResult.OK;
         }
     }
