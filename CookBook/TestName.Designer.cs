@@ -40,16 +40,16 @@
             // labelInstruction
             // 
             this.labelInstruction.AutoSize = true;
-            this.labelInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInstruction.Location = new System.Drawing.Point(13, 13);
+            this.labelInstruction.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInstruction.Location = new System.Drawing.Point(77, 9);
             this.labelInstruction.Name = "labelInstruction";
-            this.labelInstruction.Size = new System.Drawing.Size(406, 20);
+            this.labelInstruction.Size = new System.Drawing.Size(484, 26);
             this.labelInstruction.TabIndex = 0;
             this.labelInstruction.Text = "Выберите правильное название блюда на картинке";
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(113, 36);
+            this.pbImage.Location = new System.Drawing.Point(212, 42);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(200, 200);
             this.pbImage.TabIndex = 1;
@@ -60,7 +60,7 @@
             this.cbVars.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVars.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbVars.FormattingEnabled = true;
-            this.cbVars.Location = new System.Drawing.Point(12, 252);
+            this.cbVars.Location = new System.Drawing.Point(111, 248);
             this.cbVars.Name = "cbVars";
             this.cbVars.Size = new System.Drawing.Size(409, 28);
             this.cbVars.Sorted = true;
@@ -70,46 +70,59 @@
             // 
             this.btnAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAnswer.Location = new System.Drawing.Point(12, 297);
+            this.btnAnswer.BackColor = System.Drawing.Color.Peru;
+            this.btnAnswer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnAnswer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnswer.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAnswer.Location = new System.Drawing.Point(17, 306);
             this.btnAnswer.Name = "btnAnswer";
-            this.btnAnswer.Size = new System.Drawing.Size(119, 47);
+            this.btnAnswer.Size = new System.Drawing.Size(112, 43);
             this.btnAnswer.TabIndex = 3;
             this.btnAnswer.Text = "Ответить";
-            this.btnAnswer.UseVisualStyleBackColor = true;
+            this.btnAnswer.UseVisualStyleBackColor = false;
             this.btnAnswer.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnExitGame
             // 
             this.btnExitGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExitGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExitGame.Location = new System.Drawing.Point(338, 297);
+            this.btnExitGame.BackColor = System.Drawing.Color.Peru;
+            this.btnExitGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnExitGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitGame.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnExitGame.Location = new System.Drawing.Point(464, 306);
             this.btnExitGame.Name = "btnExitGame";
-            this.btnExitGame.Size = new System.Drawing.Size(81, 47);
+            this.btnExitGame.Size = new System.Drawing.Size(154, 43);
             this.btnExitGame.TabIndex = 4;
-            this.btnExitGame.Text = "Выйти";
-            this.btnExitGame.UseVisualStyleBackColor = true;
+            this.btnExitGame.Text = "Выйти из игры";
+            this.btnExitGame.UseVisualStyleBackColor = false;
             this.btnExitGame.Click += new System.EventHandler(this.btnExitGame_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCancel.Location = new System.Drawing.Point(174, 297);
+            this.btnCancel.BackColor = System.Drawing.Color.Peru;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCancel.Location = new System.Drawing.Point(293, 306);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(158, 47);
+            this.btnCancel.Size = new System.Drawing.Size(165, 43);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Отменить игру";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // TestName
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 356);
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.ClientSize = new System.Drawing.Size(630, 361);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.btnAnswer);
@@ -119,6 +132,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TestName";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Тестирование";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TestName_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

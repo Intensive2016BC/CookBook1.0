@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using CookBook.Models;
 using System.Windows.Forms;
+using System.Data;
 
 namespace CookBook.Managers
 {
@@ -39,17 +40,22 @@ namespace CookBook.Managers
             else return 0;
         }
 
-        public List<string> GetIngreds(string path)
+        public List<string> GetIngreds()
         {
             List<string> ingreds = new List<string>();
-            ingreds.AddRange(File.ReadAllLines(path));
+            DatabaseManager dbManager = new DatabaseManager();
+            DataTable ings = dbManager.GetFullList("Ingredients");
+            for (int i = 0; i < ings.Rows.Count; i++)
+            {
+                ingreds.Add(ings.Rows[i][1].ToString());
+            }
             return ingreds;
         }
 
         public List<string> GetWrongIngreds(Recipe recipe, int count)
         {
             List<string> wrongIngreds = new List<string>();
-            List<string> ingreds = GetIngreds(AppDomain.CurrentDomain.BaseDirectory + "Ingredients.txt");
+            List<string> ingreds = GetIngreds();
             wrongIngreds.AddRange(ingreds.Where(i => !recipe.Ingredients.Contains(i)).OrderBy(i => Guid.NewGuid()).Take(count));
             return wrongIngreds;
         }

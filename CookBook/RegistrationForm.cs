@@ -15,13 +15,15 @@ namespace CookBook
         public RegistrationForm()
         {
             InitializeComponent();
+            btnRegistration.BackColor = Color.Transparent;
         }
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
-            if (tbUserName.Text == "" || tbUserName.Text.Length > 25)
+            if (tbUserName.Text.Contains(" ") || tbUserName.Text == "" || tbUserName.Text.Length > 25)
             {
-                MessageBox.Show("Введено слишком короткое или слишком длинное имя!");
+                InfoForm iform = new InfoForm("Введенное имя слишком короткое, длинное или содержит пробелы!");
+                iform.Show();
                 return;
             } 
             UserManager userManager = new UserManager();

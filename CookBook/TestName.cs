@@ -23,7 +23,7 @@ namespace CookBook
             }
         }
         string RName;
-        public bool right;
+        public bool right = false;
         public bool exitGame = false;
         public bool cancelGame = false;
 
@@ -43,6 +43,12 @@ namespace CookBook
         private void btnExitGame_Click(object sender, EventArgs e)
         {
             exitGame = true;
+            DialogResult = DialogResult.OK;
+        }
+
+        private void TestName_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            right = false;
             DialogResult = DialogResult.OK;
         }
     }

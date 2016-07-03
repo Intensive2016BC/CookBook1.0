@@ -19,6 +19,16 @@ namespace CookBook
             Level = level;
             User = user;
             this.gform = gform;
+            labelBakery.BackColor = Color.Transparent;
+            labelBreakfast.BackColor = Color.Transparent;
+            labelMainMeal.BackColor = Color.Transparent;
+            labelSalad.BackColor = Color.Transparent;
+            labelSoup.BackColor = Color.Transparent;
+            pbBakery.BackColor = Color.Transparent;
+            pbBreakfast.BackColor = Color.Transparent;
+            pbMainMeal.BackColor = Color.Transparent;
+            pbSalad.BackColor = Color.Transparent;
+            pbSoup.BackColor = Color.Transparent;
         }
         GameForm gform;
         string User;
@@ -67,9 +77,12 @@ namespace CookBook
             }
             TestManager testManager = new TestManager();
             bool GameEnd = testManager.StartGame(recipes, indexes, User);
-            if (GameEnd) gform.ReturnToMenu();
-            closeAfterGame = true;
-            this.Close();
+            if (GameEnd)
+            {
+                gform.ReturnToMenu();
+                closeAfterGame = true;
+                this.Close();
+            }
         }
 
         private void CategoryGameForm_FormClosing(object sender, FormClosingEventArgs e)

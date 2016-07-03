@@ -35,6 +35,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.rbtnIngreds = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.tables)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,10 +56,12 @@
             // rbtnUser
             // 
             this.rbtnUser.AutoSize = true;
-            this.rbtnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtnUser.FlatAppearance.BorderSize = 0;
+            this.rbtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnUser.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbtnUser.Location = new System.Drawing.Point(538, 13);
             this.rbtnUser.Name = "rbtnUser";
-            this.rbtnUser.Size = new System.Drawing.Size(139, 24);
+            this.rbtnUser.Size = new System.Drawing.Size(156, 30);
             this.rbtnUser.TabIndex = 1;
             this.rbtnUser.TabStop = true;
             this.rbtnUser.Text = "Пользователи";
@@ -68,10 +71,12 @@
             // rbtnCategory
             // 
             this.rbtnCategory.AutoSize = true;
-            this.rbtnCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rbtnCategory.Location = new System.Drawing.Point(538, 43);
+            this.rbtnCategory.FlatAppearance.BorderSize = 0;
+            this.rbtnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnCategory.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtnCategory.Location = new System.Drawing.Point(538, 49);
             this.rbtnCategory.Name = "rbtnCategory";
-            this.rbtnCategory.Size = new System.Drawing.Size(107, 24);
+            this.rbtnCategory.Size = new System.Drawing.Size(126, 30);
             this.rbtnCategory.TabIndex = 2;
             this.rbtnCategory.TabStop = true;
             this.rbtnCategory.Text = "Категории";
@@ -81,10 +86,12 @@
             // rbtnRecipe
             // 
             this.rbtnRecipe.AutoSize = true;
-            this.rbtnRecipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rbtnRecipe.Location = new System.Drawing.Point(538, 73);
+            this.rbtnRecipe.FlatAppearance.BorderSize = 0;
+            this.rbtnRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnRecipe.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtnRecipe.Location = new System.Drawing.Point(537, 85);
             this.rbtnRecipe.Name = "rbtnRecipe";
-            this.rbtnRecipe.Size = new System.Drawing.Size(80, 24);
+            this.rbtnRecipe.Size = new System.Drawing.Size(81, 27);
             this.rbtnRecipe.TabIndex = 3;
             this.rbtnRecipe.TabStop = true;
             this.rbtnRecipe.Text = "Блюда";
@@ -93,10 +100,14 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAdd.Location = new System.Drawing.Point(538, 174);
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAdd.Location = new System.Drawing.Point(13, 285);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(139, 31);
+            this.btnAdd.Size = new System.Drawing.Size(157, 36);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -104,10 +115,14 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnEdit.Location = new System.Drawing.Point(538, 211);
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEdit.Location = new System.Drawing.Point(176, 285);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(139, 32);
+            this.btnEdit.Size = new System.Drawing.Size(192, 36);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Редактировать";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -115,20 +130,42 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDelete.Location = new System.Drawing.Point(537, 249);
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDelete.Location = new System.Drawing.Point(374, 285);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(140, 30);
+            this.btnDelete.Size = new System.Drawing.Size(157, 36);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // rbtnIngreds
+            // 
+            this.rbtnIngreds.AutoSize = true;
+            this.rbtnIngreds.FlatAppearance.BorderSize = 0;
+            this.rbtnIngreds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnIngreds.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtnIngreds.Location = new System.Drawing.Point(537, 118);
+            this.rbtnIngreds.Name = "rbtnIngreds";
+            this.rbtnIngreds.Size = new System.Drawing.Size(152, 30);
+            this.rbtnIngreds.TabIndex = 7;
+            this.rbtnIngreds.TabStop = true;
+            this.rbtnIngreds.Text = "Ингредиенты";
+            this.rbtnIngreds.UseVisualStyleBackColor = true;
+            this.rbtnIngreds.CheckedChanged += new System.EventHandler(this.rbtnIngreds_CheckedChanged);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 291);
+            this.BackgroundImage = global::CookBook.Properties.Resources.background11;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(704, 333);
+            this.Controls.Add(this.rbtnIngreds);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -138,6 +175,7 @@
             this.Controls.Add(this.tables);
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Редактирование базы данных";
             ((System.ComponentModel.ISupportInitialize)(this.tables)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,5 +191,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.RadioButton rbtnIngreds;
     }
 }

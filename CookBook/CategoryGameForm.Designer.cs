@@ -48,58 +48,58 @@
             // labelBreakfast
             // 
             this.labelBreakfast.AutoSize = true;
-            this.labelBreakfast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelBreakfast.Location = new System.Drawing.Point(12, 101);
+            this.labelBreakfast.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelBreakfast.Location = new System.Drawing.Point(21, 23);
             this.labelBreakfast.Name = "labelBreakfast";
-            this.labelBreakfast.Size = new System.Drawing.Size(82, 20);
+            this.labelBreakfast.Size = new System.Drawing.Size(95, 26);
             this.labelBreakfast.TabIndex = 6;
             this.labelBreakfast.Text = "Завтраки";
             // 
             // labelMainMeal
             // 
             this.labelMainMeal.AutoSize = true;
-            this.labelMainMeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMainMeal.Location = new System.Drawing.Point(141, 28);
+            this.labelMainMeal.Font = new System.Drawing.Font("Candara", 14F);
+            this.labelMainMeal.Location = new System.Drawing.Point(239, 3);
             this.labelMainMeal.Name = "labelMainMeal";
-            this.labelMainMeal.Size = new System.Drawing.Size(140, 20);
+            this.labelMainMeal.Size = new System.Drawing.Size(94, 46);
             this.labelMainMeal.TabIndex = 11;
-            this.labelMainMeal.Text = "Основные блюда";
+            this.labelMainMeal.Text = "Основные\r\n    блюда";
             // 
             // labelBakery
             // 
             this.labelBakery.AutoSize = true;
-            this.labelBakery.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelBakery.Location = new System.Drawing.Point(172, 174);
+            this.labelBakery.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelBakery.Location = new System.Drawing.Point(21, 250);
             this.labelBakery.Name = "labelBakery";
-            this.labelBakery.Size = new System.Drawing.Size(75, 20);
+            this.labelBakery.Size = new System.Drawing.Size(89, 26);
             this.labelBakery.TabIndex = 12;
             this.labelBakery.Text = "Выпечка";
             // 
             // labelSalad
             // 
             this.labelSalad.AutoSize = true;
-            this.labelSalad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSalad.Location = new System.Drawing.Point(351, 28);
+            this.labelSalad.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSalad.Location = new System.Drawing.Point(141, 133);
             this.labelSalad.Name = "labelSalad";
-            this.labelSalad.Size = new System.Drawing.Size(68, 20);
+            this.labelSalad.Size = new System.Drawing.Size(76, 26);
             this.labelSalad.TabIndex = 13;
             this.labelSalad.Text = "Салаты";
             // 
             // labelSoup
             // 
             this.labelSoup.AutoSize = true;
-            this.labelSoup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSoup.Location = new System.Drawing.Point(357, 176);
+            this.labelSoup.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSoup.Location = new System.Drawing.Point(258, 250);
             this.labelSoup.Name = "labelSoup";
-            this.labelSoup.Size = new System.Drawing.Size(47, 20);
+            this.labelSoup.Size = new System.Drawing.Size(58, 26);
             this.labelSoup.TabIndex = 14;
             this.labelSoup.Text = "Супы";
             // 
             // pbSoup
             // 
-            this.pbSoup.BackgroundImage = global::CookBook.Properties.Resources._40;
+            this.pbSoup.BackgroundImage = global::CookBook.Properties.Resources.soup;
             this.pbSoup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbSoup.Location = new System.Drawing.Point(349, 197);
+            this.pbSoup.Location = new System.Drawing.Point(253, 279);
             this.pbSoup.Name = "pbSoup";
             this.pbSoup.Size = new System.Drawing.Size(70, 70);
             this.pbSoup.TabIndex = 19;
@@ -108,9 +108,9 @@
             // 
             // pbSalad
             // 
-            this.pbSalad.BackgroundImage = global::CookBook.Properties.Resources._31;
+            this.pbSalad.BackgroundImage = global::CookBook.Properties.Resources.salad;
             this.pbSalad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbSalad.Location = new System.Drawing.Point(349, 52);
+            this.pbSalad.Location = new System.Drawing.Point(145, 162);
             this.pbSalad.Name = "pbSalad";
             this.pbSalad.Size = new System.Drawing.Size(70, 70);
             this.pbSalad.TabIndex = 18;
@@ -119,9 +119,9 @@
             // 
             // pbBakery
             // 
-            this.pbBakery.BackgroundImage = global::CookBook.Properties.Resources._3;
+            this.pbBakery.BackgroundImage = global::CookBook.Properties.Resources.bakery;
             this.pbBakery.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbBakery.Location = new System.Drawing.Point(176, 197);
+            this.pbBakery.Location = new System.Drawing.Point(33, 279);
             this.pbBakery.Name = "pbBakery";
             this.pbBakery.Size = new System.Drawing.Size(70, 70);
             this.pbBakery.TabIndex = 17;
@@ -130,9 +130,9 @@
             // 
             // pbBreakfast
             // 
-            this.pbBreakfast.BackgroundImage = global::CookBook.Properties.Resources._24;
+            this.pbBreakfast.BackgroundImage = global::CookBook.Properties.Resources.breakfast;
             this.pbBreakfast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbBreakfast.Location = new System.Drawing.Point(16, 126);
+            this.pbBreakfast.Location = new System.Drawing.Point(33, 52);
             this.pbBreakfast.Name = "pbBreakfast";
             this.pbBreakfast.Size = new System.Drawing.Size(70, 70);
             this.pbBreakfast.TabIndex = 16;
@@ -141,9 +141,9 @@
             // 
             // pbMainMeal
             // 
-            this.pbMainMeal.BackgroundImage = global::CookBook.Properties.Resources._15;
+            this.pbMainMeal.BackgroundImage = global::CookBook.Properties.Resources.mainmeal;
             this.pbMainMeal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbMainMeal.Location = new System.Drawing.Point(176, 52);
+            this.pbMainMeal.Location = new System.Drawing.Point(253, 52);
             this.pbMainMeal.Name = "pbMainMeal";
             this.pbMainMeal.Size = new System.Drawing.Size(70, 70);
             this.pbMainMeal.TabIndex = 15;
@@ -154,7 +154,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 340);
+            this.BackgroundImage = global::CookBook.Properties.Resources.background11;
+            this.ClientSize = new System.Drawing.Size(361, 361);
             this.Controls.Add(this.pbSoup);
             this.Controls.Add(this.pbSalad);
             this.Controls.Add(this.pbBakery);
@@ -168,6 +169,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CategoryGameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Игра по категориям";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CategoryGameForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbSoup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalad)).EndInit();

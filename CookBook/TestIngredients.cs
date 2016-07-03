@@ -87,6 +87,12 @@ namespace CookBook
             exitGame = true;
             DialogResult = DialogResult.OK;
         }
+
+        private void TestIngredients_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            countWrong = 3;
+            DialogResult = DialogResult.OK;
+        }
     }
 }
 

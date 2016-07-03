@@ -32,6 +32,11 @@ namespace CookBook
                     btns[i].Enabled = false;
                 }
             }
+            Level1.BackColor = Color.Transparent;
+            Level2.BackColor = Color.Transparent;
+            Level3.BackColor = Color.Transparent;
+            Level4.BackColor = Color.Transparent;
+            Level5.BackColor = Color.Transparent;
         }
         GameForm gform;
         string User;
@@ -80,9 +85,12 @@ namespace CookBook
             }
             TestManager testManager = new TestManager();
             bool GameEnd = testManager.StartGame(recipes, indexes, User);
-            if (GameEnd) gform.ReturnToMenu();
-            closeAfterGame = true;
-            this.Close();
+            if (GameEnd)
+            {
+                gform.ReturnToMenu();
+                closeAfterGame = true;
+                this.Close();
+            }
         }
 
         private void LevelGameForm_FormClosing(object sender, FormClosingEventArgs e)

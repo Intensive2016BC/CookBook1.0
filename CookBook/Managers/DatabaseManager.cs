@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
 using System.IO;
@@ -29,11 +28,13 @@ namespace CookBook.Managers
                 SQLiteCommand category = new SQLiteCommand("create table Category(id INTEGER PRIMARY KEY, Name TEXT, Level INTEGER)", sql);
                 SQLiteCommand recipe = new SQLiteCommand("create table Recipe(id INTEGER PRIMARY KEY, Image BLOB, Name TEXT, Ingredients TEXT, Description TEXT, Level INTEGER, Points INTEGER, Category INTEGER, CONSTRAINT recipe_cat_fk FOREIGN KEY (Category) references Category(id) on delete cascade)", sql);
                 SQLiteCommand userrecipe = new SQLiteCommand("create table UserRecipe(User TEXT, Recipe INTEGER)", sql);
+                SQLiteCommand ingredients = new SQLiteCommand("create table Ingredients(id INTEGER PRIMARY KEY, Name TEXT)", sql);
                 sql.Open();
                 user.ExecuteNonQuery();
                 category.ExecuteNonQuery();
                 recipe.ExecuteNonQuery();
                 userrecipe.ExecuteNonQuery();
+                ingredients.ExecuteNonQuery();
                 sql.Close();
             }
         }
@@ -61,6 +62,15 @@ namespace CookBook.Managers
         public void AddCategory(Category cat)
         {
             string sqlCommand = String.Format("insert into Category values ({0}, \'{1}\', {2})", cat.Id, cat.Name, cat.Level);
+            SQLiteCommand command = new SQLiteCommand(sqlCommand, sql);
+            sql.Open();
+            command.ExecuteNonQuery();
+            sql.Close();
+        }
+
+        public void AddIngred(string id, string name)
+        {
+            string sqlCommand = String.Format("insert into Ingredients values ({0}, \'{1}\')", id, name);
             SQLiteCommand command = new SQLiteCommand(sqlCommand, sql);
             sql.Open();
             command.ExecuteNonQuery();
@@ -121,6 +131,13 @@ namespace CookBook.Managers
             TableForResult.Load(reader);
             sql.Close();
             return TableForResult;
+        }
+
+        public bool CheckId(string query, string table)
+        {
+            DataTable data = Request(table, query);
+            if (data.Rows.Count == 0) return false;
+            else return true;
         }
 
     }

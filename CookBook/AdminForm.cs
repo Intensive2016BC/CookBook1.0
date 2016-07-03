@@ -18,22 +18,33 @@ namespace CookBook
             InitializeComponent();
             dbManager = new DatabaseManager();
             dbManager.CreateDataBase();
+            tables.BackgroundColor = Color.AntiqueWhite;
+            btnAdd.BackColor = Color.Transparent;
+            btnDelete.BackColor = Color.Transparent;
+            btnEdit.BackColor = Color.Transparent;
+            rbtnCategory.BackColor = Color.Transparent;
+            rbtnIngreds.BackColor = Color.Transparent;
+            rbtnRecipe.BackColor = Color.Transparent;
+            rbtnUser.BackColor = Color.Transparent;
         }
         DatabaseManager dbManager;
 
         private void rbtnUser_CheckedChanged(object sender, EventArgs e)
         {
             tables.DataSource = dbManager.GetFullList("User");
+            btnEdit.Enabled = true;
         }
 
         private void rbtnCategory_CheckedChanged(object sender, EventArgs e)
         {
             tables.DataSource = dbManager.GetFullList("Category");
+            btnEdit.Enabled = true;
         }
 
         private void rbtnRecipe_CheckedChanged(object sender, EventArgs e)
         {
             tables.DataSource = dbManager.GetFullList("Recipe");
+            btnEdit.Enabled = true;
         }
 
         private void UpdateTables()
@@ -44,6 +55,8 @@ namespace CookBook
                 tables.DataSource = dbManager.GetFullList("Category");
             if (rbtnRecipe.Checked == true)
                 tables.DataSource = dbManager.GetFullList("Recipe");
+            if (rbtnIngreds.Checked == true)
+                tables.DataSource = dbManager.GetFullList("Ingredients");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -55,9 +68,12 @@ namespace CookBook
                 f = new ServiceForm("Category");
             else if (rbtnRecipe.Checked == true)
                 f = new ServiceForm("Recipe");
+            else if (rbtnIngreds.Checked == true)
+                f = new ServiceForm("Ingredients");
             else
             {
-                MessageBox.Show("Выберите таблицу");
+                InfoForm iform = new InfoForm("Выберите таблицу!");
+                iform.Show();
                 return;
             }
             f.mission = "insert";
@@ -80,13 +96,46 @@ namespace CookBook
                 if (!f.cancel)
                 {
                     string id = f.recordId;
+                    string entity = "";
                     f.Close();
                     if (rbtnUser.Checked == true)
+                    {
                         insert = new ServiceForm("User");
-                    if (rbtnCategory.Checked == true)
+                        entity = "User";
+                        if (!dbManager.CheckId("Login='"+id+"'", entity))
+                        {
+                            InfoForm iform = new InfoForm("ID не существует!");
+                            iform.Show();
+                            return;
+                        }
+                    }
+                    else if (rbtnCategory.Checked == true)
+                    {
                         insert = new ServiceForm("Category");
-                    if (rbtnRecipe.Checked == true)
+                        entity = "Category";
+                    }
+                    else if (rbtnRecipe.Checked == true)
+                    {
                         insert = new ServiceForm("Recipe");
+                        entity = "Recipe";
+                    }
+                    else if (rbtnIngreds.Checked == true)
+                    {
+                        insert = new ServiceForm("Ingredients");
+                        entity = "Ingredients";
+                    }
+                    else
+                    {
+                        InfoForm iform = new InfoForm("Выберите таблицу!");
+                        iform.Show();
+                        return;
+                    }
+                    if (!dbManager.CheckId("id="+id, entity) && entity !="User")
+                    {
+                        InfoForm iform = new InfoForm("ID не существует!");
+                        iform.Show();
+                        return;
+                    }
                     insert.mission = "edit";
                     insert.GetRecordData(id);
                     if (insert.ShowDialog() == DialogResult.OK)
@@ -108,19 +157,33 @@ namespace CookBook
             {
                 if (!f.cancel)
                 {
-                    if (rbtnUser.Checked == true)
+                    if (rbtnUser.Checked == true && id !="Admin")
                         dbManager.Delete("User", "Login='" + id+"'");
-                    if (rbtnCategory.Checked == true)
+                    else if (rbtnCategory.Checked == true)
                         dbManager.Delete("Category", "id=" + id);
-                    if (rbtnRecipe.Checked == true)
+                    else if (rbtnRecipe.Checked == true)
                         dbManager.Delete("Recipe", "id=" + id);
+                    else if (rbtnIngreds.Checked == true)
+                        dbManager.Delete("Ingredients", "id="+id);
+                    else
+                    {
+                        InfoForm iform = new InfoForm("Выберите таблицу!");
+                        iform.Show();
+                    }
                 }
             }
             catch
             {
-                MessageBox.Show("Записи не найдено");
+                InfoForm iform = new InfoForm("Записи не найдено!");
+                iform.Show();
             }
             UpdateTables();
+        }
+
+        private void rbtnIngreds_CheckedChanged(object sender, EventArgs e)
+        {
+            tables.DataSource = dbManager.GetFullList("Ingredients");
+            btnEdit.Enabled = false;
         }
     }
 }

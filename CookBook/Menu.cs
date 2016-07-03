@@ -17,6 +17,15 @@ namespace CookBook
         public Menu(string username, AuthorizeForm auth)
         {
             InitializeComponent();
+            btnAdmin.BackColor = Color.Transparent;
+            btnClose.BackColor = Color.Transparent;
+            btnGame.BackColor = Color.Transparent;
+            btnClose.BackColor = Color.Transparent;
+            btnCookBook.BackColor = Color.Transparent;
+            btnUserChange.BackColor = Color.Transparent;
+            lblUserLevel.BackColor = Color.Transparent;
+            lblUserName.BackColor = Color.Transparent;
+            lblUserPoints.BackColor = Color.Transparent;
             UserName = username;
             this.auth = auth;
             UserManager userManager = new UserManager();
@@ -29,6 +38,7 @@ namespace CookBook
             }
         }
         AuthorizeForm auth;
+        bool closing = false;
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -39,14 +49,15 @@ namespace CookBook
         {
             UserManager userManager = new UserManager();
             User user = userManager.GetList().First(u => u.Login == UserName);
-            lbUserName.Text = user.Login;
-            lbUserPoints.Text = user.Points.ToString();
-            lbUserLevel.Text = userManager.GetLevel(user.Points).ToString();
+            lblUserName.Text = user.Login;
+            lblUserPoints.Text = "Набранные баллы: "+ user.Points.ToString();
+            lblUserLevel.Text = "Уровень: "+userManager.GetLevel(user.Points).ToString();
         }
 
         private void btnUserChange_Click(object sender, EventArgs e)
         {
             auth.Show();
+            closing = true;
             this.Close();
         }
 
@@ -57,14 +68,14 @@ namespace CookBook
 
         private void btnGame_Click(object sender, EventArgs e)
         {
-            GameForm gform = new GameForm(int.Parse(lbUserLevel.Text), this, UserName);
+            GameForm gform = new GameForm(int.Parse(lblUserLevel.Text.Split(' ')[1]), this, UserName);
             gform.Show();
             this.Hide();
         }
 
         private void btnCookBook_Click(object sender, EventArgs e)
         {
-            CategoriesForm cform = new CategoriesForm(int.Parse(lbUserLevel.Text), this);
+            CategoriesForm cform = new CategoriesForm(int.Parse(lblUserLevel.Text.Split(' ')[1]), this);
             cform.Show();
             this.Hide();
         }
@@ -73,6 +84,12 @@ namespace CookBook
         {
             AdminForm aform = new AdminForm();
             aform.Show();
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!closing)
+                auth.Close();
         }
     }
 }

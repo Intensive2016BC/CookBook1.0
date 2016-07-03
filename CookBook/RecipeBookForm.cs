@@ -28,6 +28,9 @@ namespace CookBook
 
         private void RecipeBookForm_Load(object sender, EventArgs e)
         {
+            this.AllowTransparency = true;
+            this.BackColor = Color.DarkGray;
+            this.TransparencyKey = this.BackColor;
             try
             {
                 RecipeManager recipesManager = new RecipeManager();
@@ -42,7 +45,8 @@ namespace CookBook
                 }
                 if (recipes.Count!=0)
                 {
-                    pbImage.Image = recipes[0].Image;
+                    pbImage.BackgroundImage = recipes[0].Image;
+                    pbImage.BackgroundImageLayout = ImageLayout.Stretch;
                     labelName.Text = recipes[0].Name;
                     rtbIngredients.Text = "";
                     for (int i = 0; i < recipes[0].Ingredients.Count; i++)
@@ -63,7 +67,7 @@ namespace CookBook
             if (Index!=0)
             {
                 Index--;
-                pbImage.Image = recipes[Index].Image;
+                pbImage.BackgroundImage = recipes[Index].Image;
                 labelName.Text = recipes[Index].Name;
                 rtbIngredients.Text = "";
                 for (int i = 0; i < recipes[Index].Ingredients.Count; i++)
@@ -81,7 +85,7 @@ namespace CookBook
             if (Index != recipes.Count-1)
             {
                 Index++;
-                pbImage.Image = recipes[Index].Image;
+                pbImage.BackgroundImage = recipes[Index].Image;
                 labelName.Text = recipes[Index].Name;
                 rtbIngredients.Text = "";
                 for (int i = 0; i < recipes[Index].Ingredients.Count; i++)
@@ -97,6 +101,11 @@ namespace CookBook
         private void RecipeBookForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             CForm.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

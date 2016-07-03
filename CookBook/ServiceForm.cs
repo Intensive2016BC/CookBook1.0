@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CookBook.Managers;
 using CookBook.Models;
@@ -32,28 +31,59 @@ namespace CookBook
             entity = tablename;
             InitializeComponent();
             this.AutoSize = true;
+            this.BackColor = Color.Peru;
             cancel = false;
             buttonOk.Click += new EventHandler(buttonOk_Click);
             buttonCancel.Click += new EventHandler(buttonCancel_Click);
             buttonOk.Text = "Ok";
             buttonOk.Name = "buttonOk";
+            buttonOk.BackColor = Color.Transparent;
+            buttonOk.FlatStyle = FlatStyle.Flat;
+            buttonOk.FlatAppearance.BorderSize = 0;
+            buttonOk.FlatAppearance.MouseOverBackColor = Color.AntiqueWhite;
+            buttonOk.Font = new Font("Candara", 12, FontStyle.Regular);
             buttonCancel.Text = "Отмена";
             buttonCancel.Name = "buttonCancel";
+            buttonCancel.BackColor = Color.Transparent;
+            buttonCancel.FlatStyle = FlatStyle.Flat;
+            buttonCancel.FlatAppearance.BorderSize = 0;
+            buttonCancel.FlatAppearance.MouseOverBackColor = Color.AntiqueWhite;
+            buttonCancel.Font = new Font("Candara", 12, FontStyle.Regular);
             for (int i = 0; i < 8; i++)
             {
                 labels[i] = new Label();
                 labels[i].Width = 200;
+                labels[i].BackColor = Color.Transparent;
+                labels[i].Font = new Font("Candara", 12, FontStyle.Regular);
                 fields[i] = new TextBox();
-                fields[i].Width = 200;
+                fields[i].Width = 300;
+                fields[i].Font = new Font("Candara", 12, FontStyle.Regular);
             }
             bigFields[0] = new RichTextBox();
-            bigFields[0].Width = 200;
+            bigFields[0].Width = 300;
             bigFields[0].Height = 100;
+            bigFields[0].Font = new Font("Candara", 12, FontStyle.Regular);
             bigFields[1] = new RichTextBox();
-            bigFields[1].Width = 200;
+            bigFields[1].Width = 300;
             bigFields[1].Height = 100;
+            bigFields[1].Font = new Font("Candara", 12, FontStyle.Regular);
             switch (tablename)
             {
+                case "Ingredients":
+                    {
+                        number = 2;
+                        labels[0].Text = "ID";
+                        labels[1].Text = "Название";
+                        for (int i = 0; i < number; i++)
+                        {
+                            labels[i].Location = new Point(x, y);
+                            fields[i].Location = new Point(x + 200, y);
+                            y += 40;
+                            this.Controls.Add(labels[i]);
+                            this.Controls.Add(fields[i]);
+                        }
+                        break;
+                    }
                 case "User":
                     {
                         number = 4;
@@ -65,7 +95,7 @@ namespace CookBook
                         {
                             labels[i].Location = new Point(x, y);
                             fields[i].Location = new Point(x + 200, y);
-                            y += 30;
+                            y += 40;
                             this.Controls.Add(labels[i]);
                             this.Controls.Add(fields[i]);
                         }
@@ -83,7 +113,7 @@ namespace CookBook
                         {
                             labels[i].Location = new Point(x, y);
                             fields[i].Location = new Point(x + 200, y);
-                            y += 30;
+                            y += 40;
                             this.Controls.Add(labels[i]);
                             this.Controls.Add(fields[i]);
                         }
@@ -107,10 +137,10 @@ namespace CookBook
                             if (i == 3 || i == 4)
                             {
                                 bigFields[i-3].Location = new Point(x+200, y);
-                                y += 70;
+                                y += 100;
                                 this.Controls.Add(bigFields[i-3]);
                             }
-                            y += 30;
+                            y += 40;
                             this.Controls.Add(labels[i]);
                             if (i!=3 && i!=4) this.Controls.Add(fields[i]);
                         }
@@ -123,7 +153,7 @@ namespace CookBook
                         labels[0].Text = "ID записи:";
                         labels[0].Location = new Point(x, y);
                         fields[0].Location = new Point(x + 200, y);
-                        y += 30;
+                        y += 40;
                         this.Controls.Add(labels[0]);
                         this.Controls.Add(fields[0]);
                         break;
@@ -144,6 +174,27 @@ namespace CookBook
             }
             switch (entity)
             {
+                case "Ingredients":
+                    {
+                        try
+                        {
+                            number = 2;
+                            for (int i = 0; i < number; i++)
+                            {
+                                if (fields[i].Text == "")
+                                { throw new System.ArgumentException("Не все данные введены!"); }
+                            }
+                            int.Parse(fields[0].Text);
+                            InsertingEditing();
+                            DialogResult = DialogResult.OK;
+                        }
+                        catch (Exception ex)
+                        {
+                            InfoForm iform = new InfoForm(ex.Message);
+                            iform.Show();
+                        }
+                        break;
+                    }
                 case "User":
                     {
                         try
@@ -164,7 +215,8 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message);
+                            iform.Show();
                         }
                         break;
                     }
@@ -192,7 +244,8 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message);
+                            iform.Show();
                         }
                         break;
                     }
@@ -212,7 +265,8 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message);
+                            iform.Show();
                         }
                         break;
                     }
@@ -230,8 +284,21 @@ namespace CookBook
                             DatabaseManager dbManager = new DatabaseManager();
                             switch (entity)
                             {
+                                case "Ingredients":
+                                    {
+                                        if (dbManager.CheckId("id="+fields[0].Text, entity))
+                                        {
+                                            throw new Exception("Такой id уже существует!");
+                                        }
+                                        dbManager.AddIngred(fields[0].Text, fields[1].Text);
+                                        break;
+                                    }
                                 case "User":
                                     {
+                                        if (dbManager.CheckId("Login='" + fields[0].Text+"'", entity))
+                                        {
+                                            throw new Exception("Такой логин уже существует!");
+                                        }
                                         bool iA = false;
                                         if (fields[2].Text == "0" || fields[2].Text == "False") iA = false;
                                         if (fields[2].Text == "1" || fields[2].Text == "True") iA = true;
@@ -241,12 +308,28 @@ namespace CookBook
                                     }
                                 case "Category":
                                     {
+                                        if (dbManager.CheckId("id=" + fields[0].Text, entity))
+                                        {
+                                            throw new Exception("Такой ID уже существует!");
+                                        }
+                                        if (dbManager.CheckId("Name='" + fields[1].Text+"'", entity))
+                                        {
+                                            throw new Exception("Такое название уже существует!");
+                                        }
                                         Category cat = new Category(int.Parse(fields[0].Text), fields[1].Text, int.Parse(fields[2].Text));
                                         dbManager.AddCategory(cat);
                                         break;
                                     }
                                 case "Recipe":
                                     {
+                                        if (dbManager.CheckId("id=" + fields[0].Text, entity))
+                                        {
+                                            throw new Exception("Такой ID уже существует!");
+                                        }
+                                        if (dbManager.CheckId("Name='" + fields[2].Text+"'", entity))
+                                        {
+                                            throw new Exception("Такое название уже существует!");
+                                        }
                                         string[] ingreds = bigFields[0].Text.Split(',');
                                         List<string> ingrs = new List<string>();
                                         for (int i = 0; i < ingreds.Length; i++)
@@ -262,7 +345,8 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Ошибка!" + ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message);
+                            iform.Show();
                         }
                         break;
                     }
@@ -282,12 +366,20 @@ namespace CookBook
                                     }
                                 case "Category":
                                     {
+                                        if (dbManager.CheckId("Name='" + fields[1].Text+"'", entity))
+                                        {
+                                            throw new Exception("Такое название уже существует!");
+                                        }
                                         dbManager.Update(entity, "Name", fields[1].Text, "id", fields[0].Text);
                                         dbManager.Update(entity, "Level", fields[2].Text, "id", fields[0].Text);
                                        break;
                                     }
                                 case "Recipe":
                                     {
+                                        if (dbManager.CheckId("Name='" + fields[2].Text+"'", entity))
+                                        {
+                                            throw new Exception("Такое название уже существует!");
+                                        }
                                         dbManager.Update(entity, "Name", fields[2].Text, "id", fields[0].Text);
                                         dbManager.Update(entity, "Ingredients", bigFields[0].Text, "id", fields[0].Text);
                                         dbManager.Update(entity, "Description", bigFields[1].Text, "id", fields[0].Text);
@@ -300,7 +392,8 @@ namespace CookBook
                         }
                         catch
                         {
-                            MessageBox.Show("Ошибка ввода");
+                            InfoForm iform = new InfoForm("Ошибка ввода!");
+                            iform.Show();
                         }
                         break;
                     }

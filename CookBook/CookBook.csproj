@@ -9,12 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CookBook</RootNamespace>
     <AssemblyName>CookBook</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -37,7 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
     </Reference>
@@ -80,6 +80,12 @@
     <Compile Include="GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LevelGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,11 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RecipeBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +164,9 @@
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LevelGameForm.resx">
       <DependentUpon>LevelGameForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,14 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RecipeBookForm.resx">
       <DependentUpon>RecipeBookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,27 +208,32 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\24.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\15.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\31.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\40.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\plate.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\back.png" />
-    <Content Include="Resources\close.png" />
-    <Content Include="Resources\forward.png" />
+    <None Include="Resources\admin.png" />
+    <None Include="Resources\forward1.png" />
+    <None Include="Resources\soup.png" />
+    <None Include="Resources\salad.png" />
+    <None Include="Resources\mainmeal.png" />
+    <None Include="Resources\gamestart.png" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\blackstar.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\background11.png" />
+    <None Include="Resources\breakfast.png" />
+    <None Include="Resources\bakery.png" />
+    <None Include="Resources\back1.png" />
+    <None Include="Resources\backmenu1.png" />
+    <None Include="Resources\crossclose.png" />
+    <None Include="Resources\food-drink-03-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

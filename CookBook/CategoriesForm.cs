@@ -18,6 +18,7 @@ namespace CookBook
             InitializeComponent();
             Level = level;
             this.menu = menu;
+            lbCategories.BackColor = Color.AntiqueWhite;
         }
         Menu menu;
         int Level;
