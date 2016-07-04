@@ -32,6 +32,7 @@
             this.buttonLevel = new System.Windows.Forms.Button();
             this.buttonRandom = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,13 +94,32 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(12, 305);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(340, 64);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Назад";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CookBook.Properties.Resources.background11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(361, 311);
+            this.ClientSize = new System.Drawing.Size(361, 377);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonRandom);
             this.Controls.Add(this.buttonLevel);
@@ -120,6 +140,7 @@
         private System.Windows.Forms.Button buttonLevel;
         private System.Windows.Forms.Button buttonRandom;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

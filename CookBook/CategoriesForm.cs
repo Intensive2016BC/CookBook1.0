@@ -56,5 +56,10 @@ namespace CookBook
                 if (cats[i].Level <= Level) lbCategories.Items.Add(cats[i]);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -148,6 +148,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RecipeBookForm_FormClosing);
             this.Load += new System.EventHandler(this.RecipeBookForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RecipeBookForm_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbForward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();

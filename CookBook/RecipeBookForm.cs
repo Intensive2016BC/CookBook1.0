@@ -54,6 +54,8 @@ namespace CookBook
                         rtbIngredients.Text += recipes[0].Ingredients[i] + "\n";
                     }
                     rtbRecipe.Text = recipes[0].Description.Replace("#", "");
+                    pbBack.Visible = false;
+                    if (recipes.Count == 1) pbForward.Visible = false;
                 }
             }
             catch(Exception ex)
@@ -77,6 +79,12 @@ namespace CookBook
                         rtbIngredients.Text += recipes[Index].Ingredients[i];
                 }
                 rtbRecipe.Text = recipes[Index].Description.Replace("#", "");
+                if (Index == 0)
+                    pbBack.Visible = false;
+                if (Index + 1 == recipes.Count)
+                    pbForward.Visible = false;
+                else
+                    pbForward.Visible = true;
             }
         }
 
@@ -95,6 +103,12 @@ namespace CookBook
                         rtbIngredients.Text += recipes[Index].Ingredients[i];
                 }
                 rtbRecipe.Text = recipes[Index].Description.Replace("#", "");
+                if (Index == recipes.Count-1)
+                    pbForward.Visible = false;
+                if (Index == 0)
+                    pbBack.Visible = false;
+                else
+                    pbBack.Visible = true;
             }
         }
 
@@ -106,6 +120,13 @@ namespace CookBook
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void RecipeBookForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.Capture = false;
+            Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
+            this.WndProc(ref m);
         }
     }
 }

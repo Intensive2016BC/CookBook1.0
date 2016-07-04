@@ -65,11 +65,14 @@ namespace CookBook
 
         private void lbIngreds_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string word = "";
             if (lbWords.SelectedIndex!=-1)
             {
-                if (!UserWords.Contains(lbWords.SelectedItem.ToString()))
+                word = lbWords.SelectedItem.ToString();
+                if (word.Contains(")"))
+                    word = word.Split(' ')[1];
+                if (!UserWords.Contains(word))
                 {
-                    string word = lbWords.SelectedItem.ToString();
                     int index = lbWords.SelectedIndex;
                     UserWords.Add(word);
                     Counter++;

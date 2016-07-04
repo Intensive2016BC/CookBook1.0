@@ -39,6 +39,8 @@
             // 
             // labelInstruction
             // 
+            this.labelInstruction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelInstruction.AutoSize = true;
             this.labelInstruction.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelInstruction.Location = new System.Drawing.Point(77, 9);
@@ -49,7 +51,8 @@
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(212, 42);
+            this.pbImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbImage.Location = new System.Drawing.Point(249, 42);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(200, 200);
             this.pbImage.TabIndex = 1;
@@ -57,19 +60,20 @@
             // 
             // cbVars
             // 
+            this.cbVars.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbVars.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVars.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbVars.FormattingEnabled = true;
             this.cbVars.Location = new System.Drawing.Point(111, 248);
             this.cbVars.Name = "cbVars";
-            this.cbVars.Size = new System.Drawing.Size(409, 28);
+            this.cbVars.Size = new System.Drawing.Size(483, 28);
             this.cbVars.Sorted = true;
             this.cbVars.TabIndex = 2;
             // 
             // btnAnswer
             // 
-            this.btnAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAnswer.BackColor = System.Drawing.Color.Peru;
             this.btnAnswer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnAnswer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -85,14 +89,13 @@
             // 
             // btnExitGame
             // 
-            this.btnExitGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExitGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExitGame.BackColor = System.Drawing.Color.Peru;
             this.btnExitGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnExitGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitGame.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExitGame.Location = new System.Drawing.Point(464, 306);
+            this.btnExitGame.Location = new System.Drawing.Point(538, 306);
             this.btnExitGame.Name = "btnExitGame";
             this.btnExitGame.Size = new System.Drawing.Size(154, 43);
             this.btnExitGame.TabIndex = 4;
@@ -102,14 +105,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancel.BackColor = System.Drawing.Color.Peru;
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCancel.Location = new System.Drawing.Point(293, 306);
+            this.btnCancel.Location = new System.Drawing.Point(367, 306);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(165, 43);
             this.btnCancel.TabIndex = 5;
@@ -122,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(630, 361);
+            this.ClientSize = new System.Drawing.Size(704, 361);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.btnAnswer);

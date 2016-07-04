@@ -49,6 +49,7 @@
             // 
             // btnAnswer
             // 
+            this.btnAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAnswer.BackColor = System.Drawing.Color.Peru;
             this.btnAnswer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnAnswer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -73,20 +74,21 @@
             this.lbRecipeIngreds.Location = new System.Drawing.Point(17, 85);
             this.lbRecipeIngreds.Name = "lbRecipeIngreds";
             this.lbRecipeIngreds.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lbRecipeIngreds.Size = new System.Drawing.Size(287, 184);
+            this.lbRecipeIngreds.Size = new System.Drawing.Size(335, 184);
             this.lbRecipeIngreds.TabIndex = 5;
             // 
             // lbIngreds
             // 
             this.lbIngreds.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lbIngreds.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbIngreds.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbIngreds.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbIngreds.FormattingEnabled = true;
             this.lbIngreds.HorizontalScrollbar = true;
             this.lbIngreds.ItemHeight = 23;
-            this.lbIngreds.Location = new System.Drawing.Point(331, 85);
+            this.lbIngreds.Location = new System.Drawing.Point(365, 85);
             this.lbIngreds.Name = "lbIngreds";
-            this.lbIngreds.Size = new System.Drawing.Size(287, 184);
+            this.lbIngreds.Size = new System.Drawing.Size(335, 184);
             this.lbIngreds.TabIndex = 6;
             this.lbIngreds.SelectedIndexChanged += new System.EventHandler(this.lbIngreds_SelectedIndexChanged);
             // 
@@ -102,12 +104,13 @@
             // 
             // btnExitGame
             // 
+            this.btnExitGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExitGame.BackColor = System.Drawing.Color.Peru;
             this.btnExitGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnExitGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitGame.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExitGame.Location = new System.Drawing.Point(464, 306);
+            this.btnExitGame.Location = new System.Drawing.Point(548, 306);
             this.btnExitGame.Name = "btnExitGame";
             this.btnExitGame.Size = new System.Drawing.Size(154, 43);
             this.btnExitGame.TabIndex = 8;
@@ -117,12 +120,13 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancel.BackColor = System.Drawing.Color.Peru;
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCancel.Location = new System.Drawing.Point(293, 306);
+            this.btnCancel.Location = new System.Drawing.Point(367, 306);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(165, 43);
             this.btnCancel.TabIndex = 9;
@@ -136,7 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(630, 361);
+            this.ClientSize = new System.Drawing.Size(714, 361);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.lblName);

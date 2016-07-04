@@ -33,6 +33,7 @@
             this.Level3 = new System.Windows.Forms.Button();
             this.Level4 = new System.Windows.Forms.Button();
             this.Level5 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Level1
@@ -110,13 +111,31 @@
             this.Level5.UseVisualStyleBackColor = true;
             this.Level5.Click += new System.EventHandler(this.Level5_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(12, 293);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(340, 50);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Text = "Назад";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // LevelGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CookBook.Properties.Resources.background11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(361, 298);
+            this.ClientSize = new System.Drawing.Size(361, 355);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.Level5);
             this.Controls.Add(this.Level4);
             this.Controls.Add(this.Level3);
@@ -138,5 +157,6 @@
         private System.Windows.Forms.Button Level3;
         private System.Windows.Forms.Button Level4;
         private System.Windows.Forms.Button Level5;
+        private System.Windows.Forms.Button btnClose;
     }
 }

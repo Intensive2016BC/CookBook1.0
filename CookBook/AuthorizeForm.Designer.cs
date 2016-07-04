@@ -133,6 +133,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cook Book";
             this.Load += new System.EventHandler(this.AuthorizeForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AuthorizeForm_MouseDown);
             this.ResumeLayout(false);
 
         }

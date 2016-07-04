@@ -110,5 +110,12 @@ namespace CookBook
             UserManager userManager = new UserManager();
             cbUsers.DataSource = userManager.GetList().Select(u => u.Login).ToList();
         }
+
+        private void AuthorizeForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.Capture = false;
+            Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
+            this.WndProc(ref m);
+        }
     }
 }
