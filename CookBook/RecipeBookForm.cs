@@ -29,7 +29,7 @@ namespace CookBook
         private void RecipeBookForm_Load(object sender, EventArgs e)
         {
             this.AllowTransparency = true;
-            this.BackColor = Color.DarkGray;
+            this.BackColor = Color.DarkGoldenrod;
             this.TransparencyKey = this.BackColor;
             try
             {
@@ -76,7 +76,7 @@ namespace CookBook
                     else
                         rtbIngredients.Text += recipes[Index].Ingredients[i];
                 }
-                rtbRecipe.Text = recipes[Index].Description.Replace("--", "\n");
+                rtbRecipe.Text = recipes[Index].Description.Replace("#", "");
             }
         }
 
@@ -94,7 +94,7 @@ namespace CookBook
                     else
                         rtbIngredients.Text += recipes[Index].Ingredients[i];
                 }
-                rtbRecipe.Text = recipes[Index].Description.Replace("--", "\n");
+                rtbRecipe.Text = recipes[Index].Description.Replace("#", "");
             }
         }
 

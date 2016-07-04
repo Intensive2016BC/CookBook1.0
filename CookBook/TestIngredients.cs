@@ -25,7 +25,6 @@ namespace CookBook
         public TestIngredients(Recipe recipe)
         {
             InitializeComponent();
-            lbIngreds.SelectedIndex = -1;
             MyRecipe = recipe;
             lblName.Text += recipe.Name;
             TestManager testManager = new TestManager();
@@ -50,6 +49,7 @@ namespace CookBook
                 lbRecipeIngreds.Items.Add(RecipeIngredients[i]);
             }
             lbIngreds.DataSource = Ingredients;
+            lbIngreds.SelectedIndex = -1;
             change = true;
         }
 

@@ -27,8 +27,22 @@ namespace CookBook
                 return;
             } 
             UserManager userManager = new UserManager();
-            userManager.CreateNewUser(tbUserName.Text);
-            this.Close();
+            if (userManager.CreateNewUser(tbUserName.Text))
+            {
+                InfoForm iform = new InfoForm("Пользователь успешно добавлен!");
+                if (iform.ShowDialog() == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                InfoForm inform = new InfoForm("Пользователь с такими именем уже существует");
+                if (inform.ShowDialog() == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }

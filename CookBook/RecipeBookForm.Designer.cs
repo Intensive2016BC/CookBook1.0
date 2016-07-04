@@ -93,6 +93,7 @@
             this.rtbIngredients.Location = new System.Drawing.Point(59, 229);
             this.rtbIngredients.Name = "rtbIngredients";
             this.rtbIngredients.ReadOnly = true;
+            this.rtbIngredients.ShortcutsEnabled = false;
             this.rtbIngredients.Size = new System.Drawing.Size(307, 171);
             this.rtbIngredients.TabIndex = 4;
             this.rtbIngredients.Text = "";
@@ -106,6 +107,7 @@
             this.rtbRecipe.Location = new System.Drawing.Point(419, 45);
             this.rtbRecipe.Name = "rtbRecipe";
             this.rtbRecipe.ReadOnly = true;
+            this.rtbRecipe.ShortcutsEnabled = false;
             this.rtbRecipe.Size = new System.Drawing.Size(310, 355);
             this.rtbRecipe.TabIndex = 5;
             this.rtbRecipe.Text = "";

@@ -19,6 +19,7 @@ namespace CookBook
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.OK;
             this.Close();
         }
 

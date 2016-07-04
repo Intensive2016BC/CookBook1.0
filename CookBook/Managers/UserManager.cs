@@ -54,18 +54,18 @@ namespace CookBook.Managers
             }
         }
 
-        public void CreateNewUser(string userName)
+        public bool CreateNewUser(string userName)
         {
             User newuser = new User(userName, "123", false, 0, new List<int>());
             if (CheckUsers(userName))
             {
                 DatabaseManager dbManager = new DatabaseManager();
                 dbManager.AddUser(newuser);
-                MessageBox.Show("Пользователь успешно добавлен!");
+                return true;
             }
             else
             {
-                MessageBox.Show("Пользователь с такими именем уже существует");
+                return false;
             }
         }
 

@@ -15,8 +15,6 @@ namespace CookBook
         public AuthorizeForm()
         {
             InitializeComponent();
-            UserManager userManager = new UserManager();
-            cbUsers.DataSource = userManager.GetList().Select(u => u.Login).ToList();
             DatabaseManager dbManager = new DatabaseManager();
             pass = dbManager.Request("User", "Login = 'Admin'").Rows[0][1].ToString();
         }
@@ -34,6 +32,17 @@ namespace CookBook
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            if (Admin && cbUsers.SelectedItem.ToString() != "Admin")
+            {
+                Admin = false;
+                Controls.Remove(Password);
+                Password.Text = "";
+                cbUsers.Location = new Point(104, 224);
+                Menu mainForm = new Menu(cbUsers.SelectedItem.ToString(), this);
+                mainForm.Show();
+                this.Hide();
+                return;
+            } 
             if (!Admin)
             {
                 if (cbUsers.SelectedItem.ToString() == "Admin")
@@ -53,15 +62,24 @@ namespace CookBook
                     this.Hide();
                 }
             }
-            else if (Password.Text == pass)
+            else
             {
-                Menu mainForm = new Menu("Admin", this);
-                Admin = false;
-                Controls.Remove(Password);
-                Password.Text = "";
-                cbUsers.Location = new Point(104, 224);
-                mainForm.Show();
-                this.Hide();
+                if (Password.Text == pass)
+                {
+                    Menu mainForm = new Menu("Admin", this);
+                    Admin = false;
+                    Controls.Remove(Password);
+                    Password.Text = "";
+                    cbUsers.Location = new Point(104, 224);
+                    mainForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    InfoForm iform = new InfoForm("Неверный пароль!");
+                    iform.Show();
+                    Password.Text = "";
+                }
             }
         }
 
@@ -79,11 +97,18 @@ namespace CookBook
             buttonExit.BackColor = Color.Transparent;
             buttonExit.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnRegistration.BackColor = Color.Transparent;
+            GetUsers();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        public void GetUsers()
+        {
+            UserManager userManager = new UserManager();
+            cbUsers.DataSource = userManager.GetList().Select(u => u.Login).ToList();
         }
     }
 }

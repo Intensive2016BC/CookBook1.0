@@ -49,7 +49,6 @@ namespace CookBook
 
         private void CategoriesForm_Load(object sender, EventArgs e)
         {
-
             CategoryManager catManager = new CategoryManager();
             cats = catManager.GetList(AppDomain.CurrentDomain.BaseDirectory + "Cats.txt");
             for (int i = 0; i < cats.Count; i++)

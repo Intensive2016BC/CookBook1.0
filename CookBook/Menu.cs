@@ -56,6 +56,7 @@ namespace CookBook
 
         private void btnUserChange_Click(object sender, EventArgs e)
         {
+            auth.GetUsers();
             auth.Show();
             closing = true;
             this.Close();

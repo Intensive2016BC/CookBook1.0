@@ -137,6 +137,12 @@
     <Compile Include="ServiceForm.Designer.cs">
       <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestRecipe.Designer.cs">
+      <DependentUpon>TestRecipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestIngredients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceForm.resx">
       <DependentUpon>ServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestRecipe.resx">
+      <DependentUpon>TestRecipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestIngredients.resx">
       <DependentUpon>TestIngredients.cs</DependentUpon>
