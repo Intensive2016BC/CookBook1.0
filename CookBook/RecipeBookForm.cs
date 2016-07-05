@@ -13,24 +13,40 @@ namespace CookBook
 {
     public partial class RecipeBookForm : Form
     {
-        public RecipeBookForm(int level, int category, CategoriesForm cform)
+        public RecipeBookForm(int level, int category, CategoriesForm cform, bool vol)
         {
             InitializeComponent();
             Level = level;
             Category = category;
             CForm = cform;
+            volume = vol;
         }
         CategoriesForm CForm;
         int Level;
         int Category;
         List<Recipe> recipes;
         int Index = 0;
+        bool volume;
+
+        void rtbIngredients_MouseWheel(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(e.Delta.ToString());
+        }
+
+        void rtbRecipe_MouseWheel(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(e.Delta.ToString());
+        }
 
         private void RecipeBookForm_Load(object sender, EventArgs e)
         {
             this.AllowTransparency = true;
             this.BackColor = Color.DarkGoldenrod;
             this.TransparencyKey = this.BackColor;
+            rtbIngredients.ScrollBars = RichTextBoxScrollBars.None;
+            rtbRecipe.ScrollBars = RichTextBoxScrollBars.None;
+            rtbIngredients.MouseWheel += new MouseEventHandler(rtbIngredients_MouseWheel);
+            rtbRecipe.MouseWheel += new MouseEventHandler(rtbRecipe_MouseWheel);
             try
             {
                 RecipeManager recipesManager = new RecipeManager();

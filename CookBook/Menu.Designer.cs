@@ -36,6 +36,8 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserLevel = new System.Windows.Forms.Label();
             this.lblUserPoints = new System.Windows.Forms.Label();
+            this.pbVolume = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVolume)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGame
@@ -131,18 +133,22 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUserName.Location = new System.Drawing.Point(13, 13);
+            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserName.Font = new System.Drawing.Font("Candara", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUserName.ForeColor = System.Drawing.Color.BurlyWood;
+            this.lblUserName.Location = new System.Drawing.Point(13, 21);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(78, 33);
+            this.lblUserName.Size = new System.Drawing.Size(84, 36);
             this.lblUserName.TabIndex = 9;
             this.lblUserName.Text = "label1";
             // 
             // lblUserLevel
             // 
             this.lblUserLevel.AutoSize = true;
+            this.lblUserLevel.BackColor = System.Drawing.Color.Transparent;
             this.lblUserLevel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUserLevel.Location = new System.Drawing.Point(13, 51);
+            this.lblUserLevel.ForeColor = System.Drawing.Color.BurlyWood;
+            this.lblUserLevel.Location = new System.Drawing.Point(14, 66);
             this.lblUserLevel.Name = "lblUserLevel";
             this.lblUserLevel.Size = new System.Drawing.Size(62, 26);
             this.lblUserLevel.TabIndex = 10;
@@ -151,21 +157,37 @@
             // lblUserPoints
             // 
             this.lblUserPoints.AutoSize = true;
+            this.lblUserPoints.BackColor = System.Drawing.Color.Transparent;
             this.lblUserPoints.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUserPoints.Location = new System.Drawing.Point(13, 82);
+            this.lblUserPoints.ForeColor = System.Drawing.Color.BurlyWood;
+            this.lblUserPoints.Location = new System.Drawing.Point(129, 66);
             this.lblUserPoints.Name = "lblUserPoints";
             this.lblUserPoints.Size = new System.Drawing.Size(62, 26);
             this.lblUserPoints.TabIndex = 11;
             this.lblUserPoints.Text = "label1";
+            // 
+            // pbVolume
+            // 
+            this.pbVolume.BackColor = System.Drawing.Color.Transparent;
+            this.pbVolume.BackgroundImage = global::CookBook.Properties.Resources.volumeon;
+            this.pbVolume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbVolume.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbVolume.Location = new System.Drawing.Point(302, 474);
+            this.pbVolume.Name = "pbVolume";
+            this.pbVolume.Size = new System.Drawing.Size(50, 50);
+            this.pbVolume.TabIndex = 12;
+            this.pbVolume.TabStop = false;
+            this.pbVolume.Click += new System.EventHandler(this.pbVolume_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::CookBook.Properties.Resources.backmenu1;
+            this.BackgroundImage = global::CookBook.Properties.Resources.backmenu2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(361, 480);
+            this.ClientSize = new System.Drawing.Size(361, 529);
+            this.Controls.Add(this.pbVolume);
             this.Controls.Add(this.lblUserPoints);
             this.Controls.Add(this.lblUserLevel);
             this.Controls.Add(this.lblUserName);
@@ -175,11 +197,13 @@
             this.Controls.Add(this.btnCookBook);
             this.Controls.Add(this.btnGame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbVolume)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +219,6 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblUserLevel;
         private System.Windows.Forms.Label lblUserPoints;
+        private System.Windows.Forms.PictureBox pbVolume;
     }
 }

@@ -103,7 +103,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(12, 305);
+            this.btnClose.Location = new System.Drawing.Point(12, 404);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(340, 64);
             this.btnClose.TabIndex = 7;
@@ -118,13 +118,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CookBook.Properties.Resources.background11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(361, 377);
+            this.ClientSize = new System.Drawing.Size(361, 480);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonRandom);
             this.Controls.Add(this.buttonLevel);
             this.Controls.Add(this.buttonCategory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Начать играть";

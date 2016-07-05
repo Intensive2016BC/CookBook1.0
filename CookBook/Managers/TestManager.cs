@@ -134,6 +134,7 @@ namespace CookBook.Managers
         {
             TestManager testManager = new TestManager();
             int count = 0;
+            double allPoints = 0;
             List<int> DoneRecipes = new List<int>();
             List<string> Results = new List<string>();
             int test = recipes.Count;
@@ -144,8 +145,7 @@ namespace CookBook.Managers
                 int index = rand.Next(0, indexes.Count);
                 Random TestType = new Random();
                 int Type = TestType.Next(1, 4);
-
-                Type = 3;
+                Type = 2;
 
                 if (Type == 1)
                 {
@@ -161,23 +161,27 @@ namespace CookBook.Managers
                     if (result == 0)
                     {
                         count += recipes[indexes[index]].Points;
+                        allPoints+= recipes[indexes[index]].Points;
                         DoneRecipes.Add(recipes[indexes[index]].Id);
                         Results.Add(recipes[indexes[index]].Name + "," + recipes[indexes[index]].Points.ToString());
                     }
                     if (result == 2)
                     {
                         count += recipes[indexes[index]].Points / 3;
+                        allPoints += recipes[indexes[index]].Points;
                         DoneRecipes.Add(recipes[indexes[index]].Id);
                         Results.Add(recipes[indexes[index]].Name + "," + (recipes[indexes[index]].Points/3).ToString());
                     }
                     if (result == 1)
                     {
                         count += recipes[indexes[index]].Points * 2 / 3;
+                        allPoints += recipes[indexes[index]].Points;
                         DoneRecipes.Add(recipes[indexes[index]].Id);
                         Results.Add(recipes[indexes[index]].Name + "," +( recipes[indexes[index]].Points*2/3).ToString());
                     }
                     if (result == 3)
                     {
+                        allPoints += recipes[indexes[index]].Points;
                         Results.Add(recipes[indexes[index]].Name + ",0");
                     }
                 }
@@ -195,11 +199,13 @@ namespace CookBook.Managers
                     if (result == 1)
                     {
                         count += recipes[indexes[index]].Points;
+                        allPoints += recipes[indexes[index]].Points;
                         DoneRecipes.Add(recipes[indexes[index]].Id);
                         Results.Add(recipes[indexes[index]].Name + "," + recipes[indexes[index]].Points.ToString());
                     }
                     if (result == 0)
                     {
+                        allPoints += recipes[indexes[index]].Points;
                         Results.Add(recipes[indexes[index]].Name + ",0");
                     }
                 }
@@ -217,17 +223,19 @@ namespace CookBook.Managers
                     if (result == 1)
                     {
                         count += recipes[indexes[index]].Points;
+                        allPoints += recipes[indexes[index]].Points;
                         DoneRecipes.Add(recipes[indexes[index]].Id);
                         Results.Add(recipes[indexes[index]].Name + "," + recipes[indexes[index]].Points.ToString());
                     }
                     if (result == 0)
                     {
+                        allPoints += recipes[indexes[index]].Points;
                         Results.Add(recipes[indexes[index]].Name + ",0");
                     }
                 }
                 indexes.RemoveAt(index);
             }
-            ResultForm rform = new ResultForm(Results);
+            ResultForm rform = new ResultForm(Results, allPoints);
             UserManager userManager = new UserManager();
             userManager.ChangeUserPoints(User, count, DoneRecipes);
             if (rform.ShowDialog() == DialogResult.OK)

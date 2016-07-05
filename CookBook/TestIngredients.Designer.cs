@@ -55,7 +55,7 @@
             this.btnAnswer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnswer.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAnswer.Location = new System.Drawing.Point(17, 306);
+            this.btnAnswer.Location = new System.Drawing.Point(588, 306);
             this.btnAnswer.Name = "btnAnswer";
             this.btnAnswer.Size = new System.Drawing.Size(112, 43);
             this.btnAnswer.TabIndex = 3;
@@ -110,7 +110,7 @@
             this.btnExitGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitGame.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExitGame.Location = new System.Drawing.Point(548, 306);
+            this.btnExitGame.Location = new System.Drawing.Point(183, 306);
             this.btnExitGame.Name = "btnExitGame";
             this.btnExitGame.Size = new System.Drawing.Size(154, 43);
             this.btnExitGame.TabIndex = 8;
@@ -126,7 +126,7 @@
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCancel.Location = new System.Drawing.Point(367, 306);
+            this.btnCancel.Location = new System.Drawing.Point(12, 306);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(165, 43);
             this.btnCancel.TabIndex = 9;
@@ -149,6 +149,7 @@
             this.Controls.Add(this.btnAnswer);
             this.Controls.Add(this.labelInstruction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TestIngredients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тестирование";

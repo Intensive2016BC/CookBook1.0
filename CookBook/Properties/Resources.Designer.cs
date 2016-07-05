@@ -103,6 +103,16 @@ namespace CookBook.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backmenu2 {
+            get {
+                object obj = ResourceManager.GetObject("backmenu2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bakery {
             get {
                 object obj = ResourceManager.GetObject("bakery", resourceCulture);
@@ -266,6 +276,26 @@ namespace CookBook.Properties {
         internal static System.Drawing.Bitmap soup {
             get {
                 object obj = ResourceManager.GetObject("soup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap volumeoff {
+            get {
+                object obj = ResourceManager.GetObject("volumeoff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap volumeon {
+            get {
+                object obj = ResourceManager.GetObject("volumeon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

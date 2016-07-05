@@ -68,6 +68,7 @@
             this.ClientSize = new System.Drawing.Size(284, 151);
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.btnRegistration);
+            this.MaximizeBox = false;
             this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";

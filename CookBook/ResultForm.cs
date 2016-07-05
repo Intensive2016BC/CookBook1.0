@@ -11,9 +11,10 @@ namespace CookBook
 {
     public partial class ResultForm : Form
     {
-        public ResultForm(List<string> results)
+        public ResultForm(List<string> results, double points)
         {
             InitializeComponent();
+            double UserPoints = 0;
             resultsTable.RowCount = results.Count;
             resultsTable.ColumnCount = 2;
             resultsTable.Columns[0].HeaderText = "Рецепт";
@@ -24,6 +25,23 @@ namespace CookBook
             {
                 resultsTable.Rows[i].Cells[0].Value = results[i].Split(',')[0];
                 resultsTable.Rows[i].Cells[1].Value = results[i].Split(',')[1];
+                UserPoints += Convert.ToDouble(results[i].Split(',')[1]);
+            }
+            if (UserPoints == points)
+            {
+                label1.Text = "Молодец, так держать!";
+            }
+            else if (points/UserPoints*100 > 70)
+            {
+                label1.Text = "Хорошо, но вы можете лучше!";
+            }
+            else if (points/UserPoints*100 > 40)
+            {
+                label1.Text = "У вас почти получилось";
+            }
+            else
+            {
+                label1.Text = "К сожалению, вы пока не достигли \nхороших результатов";
             }
         }
 

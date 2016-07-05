@@ -17,9 +17,27 @@ namespace CookBook
             InitializeComponent();
             RName = name;
             pbImage.Image = image;
-            for (int i = 0; i < recipes.Count; i++)
+            Random rand = new Random();
+            if (recipes.Count > 10)
             {
-                cbVars.Items.Add(recipes[i].Name);
+                for (int i = 0; i < 10; i++)
+                {
+                    int ind = rand.Next(0, recipes.Count);
+                    if (!cbVars.Items.Contains(recipes[ind].Name))
+                    {
+                        cbVars.Items.Add(recipes[ind].Name);
+                    }
+                    else i--;
+                }
+                if (!cbVars.Items.Contains(name))
+                    cbVars.Items.Add(name);
+            }
+            else
+            {
+                for (int i = 0; i < recipes.Count; i++)
+                {
+                    cbVars.Items.Add(recipes[i].Name);
+                }
             }
         }
         string RName;

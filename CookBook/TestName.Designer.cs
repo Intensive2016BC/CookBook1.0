@@ -52,7 +52,7 @@
             // pbImage
             // 
             this.pbImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbImage.Location = new System.Drawing.Point(249, 42);
+            this.pbImage.Location = new System.Drawing.Point(254, 42);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(200, 200);
             this.pbImage.TabIndex = 1;
@@ -67,7 +67,7 @@
             this.cbVars.FormattingEnabled = true;
             this.cbVars.Location = new System.Drawing.Point(111, 248);
             this.cbVars.Name = "cbVars";
-            this.cbVars.Size = new System.Drawing.Size(483, 28);
+            this.cbVars.Size = new System.Drawing.Size(493, 28);
             this.cbVars.Sorted = true;
             this.cbVars.TabIndex = 2;
             // 
@@ -79,7 +79,7 @@
             this.btnAnswer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnswer.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAnswer.Location = new System.Drawing.Point(17, 306);
+            this.btnAnswer.Location = new System.Drawing.Point(590, 306);
             this.btnAnswer.Name = "btnAnswer";
             this.btnAnswer.Size = new System.Drawing.Size(112, 43);
             this.btnAnswer.TabIndex = 3;
@@ -95,7 +95,7 @@
             this.btnExitGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitGame.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExitGame.Location = new System.Drawing.Point(538, 306);
+            this.btnExitGame.Location = new System.Drawing.Point(183, 306);
             this.btnExitGame.Name = "btnExitGame";
             this.btnExitGame.Size = new System.Drawing.Size(154, 43);
             this.btnExitGame.TabIndex = 4;
@@ -111,7 +111,7 @@
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCancel.Location = new System.Drawing.Point(367, 306);
+            this.btnCancel.Location = new System.Drawing.Point(12, 306);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(165, 43);
             this.btnCancel.TabIndex = 5;
@@ -124,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(704, 361);
+            this.ClientSize = new System.Drawing.Size(714, 361);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.btnAnswer);
@@ -132,6 +132,7 @@
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.labelInstruction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TestName";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тестирование";

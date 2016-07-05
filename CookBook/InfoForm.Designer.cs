@@ -71,6 +71,7 @@
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.TextLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "InfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.InfoForm_Load);

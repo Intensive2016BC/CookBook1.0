@@ -13,7 +13,7 @@ namespace CookBook
 {
     public partial class GameForm : Form
     {
-        public GameForm(int level, Menu menu, string user)
+        public GameForm(int level, Menu menu, string user, bool vol)
         {
             InitializeComponent();
             this.Level = level;
@@ -23,21 +23,23 @@ namespace CookBook
             buttonCategory.BackColor = Color.Transparent;
             buttonLevel.BackColor = Color.Transparent;
             buttonRandom.BackColor = Color.Transparent;
+            volume = vol;
         }
         string User;
         int Level;
         Menu menu;
+        bool volume;
 
         private void buttonCategory_Click(object sender, EventArgs e)
         {
-            CategoryGameForm cgform = new CategoryGameForm(Level, User, this);
+            CategoryGameForm cgform = new CategoryGameForm(Level, User, this, volume);
             cgform.Show();
             this.Hide();
         }
 
         private void buttonLevel_Click(object sender, EventArgs e)
         {
-            LevelGameForm lgform = new LevelGameForm(Level, User, this);
+            LevelGameForm lgform = new LevelGameForm(Level, User, this, volume);
             lgform.Show();
             this.Hide();
         }

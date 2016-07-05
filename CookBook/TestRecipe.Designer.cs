@@ -55,7 +55,7 @@
             this.btnAnswer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnswer.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAnswer.Location = new System.Drawing.Point(17, 306);
+            this.btnAnswer.Location = new System.Drawing.Point(590, 306);
             this.btnAnswer.Name = "btnAnswer";
             this.btnAnswer.Size = new System.Drawing.Size(112, 43);
             this.btnAnswer.TabIndex = 3;
@@ -72,7 +72,7 @@
             this.lbWords.FormattingEnabled = true;
             this.lbWords.HorizontalScrollbar = true;
             this.lbWords.ItemHeight = 23;
-            this.lbWords.Location = new System.Drawing.Point(365, 85);
+            this.lbWords.Location = new System.Drawing.Point(375, 85);
             this.lbWords.Name = "lbWords";
             this.lbWords.Size = new System.Drawing.Size(327, 184);
             this.lbWords.TabIndex = 6;
@@ -95,7 +95,7 @@
             this.btnExitGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitGame.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExitGame.Location = new System.Drawing.Point(538, 306);
+            this.btnExitGame.Location = new System.Drawing.Point(183, 306);
             this.btnExitGame.Name = "btnExitGame";
             this.btnExitGame.Size = new System.Drawing.Size(154, 43);
             this.btnExitGame.TabIndex = 8;
@@ -110,7 +110,7 @@
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCancel.Location = new System.Drawing.Point(367, 306);
+            this.btnCancel.Location = new System.Drawing.Point(12, 306);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(165, 43);
             this.btnCancel.TabIndex = 9;
@@ -136,7 +136,7 @@
             this.btnAgain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgain.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAgain.Location = new System.Drawing.Point(570, 42);
+            this.btnAgain.Location = new System.Drawing.Point(580, 42);
             this.btnAgain.Name = "btnAgain";
             this.btnAgain.Size = new System.Drawing.Size(122, 37);
             this.btnAgain.TabIndex = 11;
@@ -150,7 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(704, 361);
+            this.ClientSize = new System.Drawing.Size(714, 361);
             this.Controls.Add(this.btnAgain);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnCancel);
@@ -160,6 +160,7 @@
             this.Controls.Add(this.btnAnswer);
             this.Controls.Add(this.labelInstruction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "TestRecipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тестирование";

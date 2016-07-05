@@ -13,9 +13,10 @@ namespace CookBook
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        public AdminForm(bool vol)
         {
             InitializeComponent();
+            volume = vol;
             dbManager = new DatabaseManager();
             dbManager.CreateDataBase();
             tables.BackgroundColor = Color.AntiqueWhite;
@@ -28,6 +29,7 @@ namespace CookBook
             rbtnUser.BackColor = Color.Transparent;
         }
         DatabaseManager dbManager;
+        bool volume;
 
         private void rbtnUser_CheckedChanged(object sender, EventArgs e)
         {

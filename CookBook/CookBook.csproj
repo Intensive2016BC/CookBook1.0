@@ -155,6 +155,9 @@
     <Compile Include="TestName.Designer.cs">
       <DependentUpon>TestName.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransparentRTB.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +246,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volumeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backmenu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volumeoff.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volumeoff.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

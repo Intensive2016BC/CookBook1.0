@@ -13,7 +13,7 @@ namespace CookBook
 {
     public partial class CategoryGameForm : Form
     {
-        public CategoryGameForm(int level, string user, GameForm gform)
+        public CategoryGameForm(int level, string user, GameForm gform, bool vol)
         {
             InitializeComponent();
             Level = level;
@@ -29,11 +29,13 @@ namespace CookBook
             pbMainMeal.BackColor = Color.Transparent;
             pbSalad.BackColor = Color.Transparent;
             pbSoup.BackColor = Color.Transparent;
+            volume = vol;
         }
         GameForm gform;
         string User;
         int Level;
         bool closeAfterGame = false;
+        bool volume;
 
         private void pbMainMeal_Click(object sender, EventArgs e)
         {
@@ -88,6 +90,11 @@ namespace CookBook
         private void CategoryGameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!closeAfterGame) gform.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

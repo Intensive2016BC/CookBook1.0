@@ -38,6 +38,7 @@
             this.pbBakery = new System.Windows.Forms.PictureBox();
             this.pbBreakfast = new System.Windows.Forms.PictureBox();
             this.pbMainMeal = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbSoup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBakery)).BeginInit();
@@ -150,13 +151,31 @@
             this.pbMainMeal.TabStop = false;
             this.pbMainMeal.Click += new System.EventHandler(this.pbMainMeal_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(12, 404);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(340, 64);
+            this.btnClose.TabIndex = 20;
+            this.btnClose.Text = "Назад";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // CategoryGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CookBook.Properties.Resources.background11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(361, 361);
+            this.ClientSize = new System.Drawing.Size(361, 480);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pbSoup);
             this.Controls.Add(this.pbSalad);
             this.Controls.Add(this.pbBakery);
@@ -168,6 +187,7 @@
             this.Controls.Add(this.labelMainMeal);
             this.Controls.Add(this.labelBreakfast);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CategoryGameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Игра по категориям";
@@ -193,5 +213,6 @@
         private System.Windows.Forms.PictureBox pbBakery;
         private System.Windows.Forms.PictureBox pbSalad;
         private System.Windows.Forms.PictureBox pbSoup;
+        private System.Windows.Forms.Button btnClose;
     }
 }

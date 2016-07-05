@@ -13,16 +13,18 @@ namespace CookBook
 {
     public partial class CategoriesForm : Form
     {
-        public CategoriesForm(int level, Menu menu)
+        public CategoriesForm(int level, Menu menu, bool vol)
         {
             InitializeComponent();
             Level = level;
             this.menu = menu;
+            volume = vol;
             lbCategories.BackColor = Color.AntiqueWhite;
         }
         Menu menu;
         int Level;
         List<Category> cats = null;
+        bool volume;
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
@@ -36,7 +38,7 @@ namespace CookBook
                         Category = cats[i].Id;
                     }
                 }
-                RecipeBookForm rbform = new RecipeBookForm(Level, Category, this);
+                RecipeBookForm rbform = new RecipeBookForm(Level, Category, this, volume);
                 rbform.Show();
                 this.Hide();
             }

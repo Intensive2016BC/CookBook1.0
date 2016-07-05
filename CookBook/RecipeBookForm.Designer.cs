@@ -32,9 +32,9 @@
             this.pbBack = new System.Windows.Forms.PictureBox();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
-            this.rtbIngredients = new System.Windows.Forms.RichTextBox();
-            this.rtbRecipe = new System.Windows.Forms.RichTextBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.rtbIngredients = new CookBook.TransparentRTB();
+            this.rtbRecipe = new CookBook.TransparentRTB();
             ((System.ComponentModel.ISupportInitialize)(this.pbForward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
@@ -84,34 +84,6 @@
             this.labelName.Size = new System.Drawing.Size(0, 26);
             this.labelName.TabIndex = 3;
             // 
-            // rtbIngredients
-            // 
-            this.rtbIngredients.BackColor = System.Drawing.Color.PeachPuff;
-            this.rtbIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbIngredients.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rtbIngredients.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.rtbIngredients.Location = new System.Drawing.Point(59, 229);
-            this.rtbIngredients.Name = "rtbIngredients";
-            this.rtbIngredients.ReadOnly = true;
-            this.rtbIngredients.ShortcutsEnabled = false;
-            this.rtbIngredients.Size = new System.Drawing.Size(307, 171);
-            this.rtbIngredients.TabIndex = 4;
-            this.rtbIngredients.Text = "";
-            // 
-            // rtbRecipe
-            // 
-            this.rtbRecipe.BackColor = System.Drawing.Color.PeachPuff;
-            this.rtbRecipe.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbRecipe.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rtbRecipe.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.rtbRecipe.Location = new System.Drawing.Point(419, 45);
-            this.rtbRecipe.Name = "rtbRecipe";
-            this.rtbRecipe.ReadOnly = true;
-            this.rtbRecipe.ShortcutsEnabled = false;
-            this.rtbRecipe.Size = new System.Drawing.Size(310, 355);
-            this.rtbRecipe.TabIndex = 5;
-            this.rtbRecipe.Text = "";
-            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
@@ -128,6 +100,26 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // rtbIngredients
+            // 
+            this.rtbIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbIngredients.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rtbIngredients.Location = new System.Drawing.Point(59, 229);
+            this.rtbIngredients.Name = "rtbIngredients";
+            this.rtbIngredients.Size = new System.Drawing.Size(312, 166);
+            this.rtbIngredients.TabIndex = 7;
+            this.rtbIngredients.Text = "";
+            // 
+            // rtbRecipe
+            // 
+            this.rtbRecipe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbRecipe.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rtbRecipe.Location = new System.Drawing.Point(417, 47);
+            this.rtbRecipe.Name = "rtbRecipe";
+            this.rtbRecipe.Size = new System.Drawing.Size(312, 353);
+            this.rtbRecipe.TabIndex = 8;
+            this.rtbRecipe.Text = "";
+            // 
             // RecipeBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,9 +127,9 @@
             this.BackgroundImage = global::CookBook.Properties.Resources.book4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 500);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.rtbRecipe);
             this.Controls.Add(this.rtbIngredients);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pbForward);
             this.Controls.Add(this.pbBack);
@@ -163,8 +155,8 @@
         private System.Windows.Forms.PictureBox pbBack;
         private System.Windows.Forms.PictureBox pbForward;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.RichTextBox rtbIngredients;
-        private System.Windows.Forms.RichTextBox rtbRecipe;
         private System.Windows.Forms.Button btnClose;
+        private TransparentRTB rtbIngredients;
+        private TransparentRTB rtbRecipe;
     }
 }

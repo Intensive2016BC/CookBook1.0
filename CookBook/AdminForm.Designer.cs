@@ -173,6 +173,7 @@
             this.Controls.Add(this.rbtnCategory);
             this.Controls.Add(this.rbtnUser);
             this.Controls.Add(this.tables);
+            this.MaximizeBox = false;
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактирование базы данных";

@@ -17,15 +17,13 @@ namespace CookBook
         public Menu(string username, AuthorizeForm auth)
         {
             InitializeComponent();
+            volume = true;
             btnAdmin.BackColor = Color.Transparent;
             btnClose.BackColor = Color.Transparent;
             btnGame.BackColor = Color.Transparent;
             btnClose.BackColor = Color.Transparent;
             btnCookBook.BackColor = Color.Transparent;
             btnUserChange.BackColor = Color.Transparent;
-            lblUserLevel.BackColor = Color.Transparent;
-            lblUserName.BackColor = Color.Transparent;
-            lblUserPoints.BackColor = Color.Transparent;
             UserName = username;
             this.auth = auth;
             UserManager userManager = new UserManager();
@@ -34,11 +32,15 @@ namespace CookBook
             {
                 if (users[i].Login == username)
                     if (!users[i].IsAdmin)
+                    {
                         btnAdmin.Visible = false;
+                        pbVolume.Location = new Point(pbVolume.Location.X, pbVolume.Location.Y-64);
+                    }
             }
         }
         AuthorizeForm auth;
         bool closing = false;
+        bool volume;
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -69,21 +71,21 @@ namespace CookBook
 
         private void btnGame_Click(object sender, EventArgs e)
         {
-            GameForm gform = new GameForm(int.Parse(lblUserLevel.Text.Split(' ')[1]), this, UserName);
+            GameForm gform = new GameForm(int.Parse(lblUserLevel.Text.Split(' ')[1]), this, UserName, volume);
             gform.Show();
             this.Hide();
         }
 
         private void btnCookBook_Click(object sender, EventArgs e)
         {
-            CategoriesForm cform = new CategoriesForm(int.Parse(lblUserLevel.Text.Split(' ')[1]), this);
+            CategoriesForm cform = new CategoriesForm(int.Parse(lblUserLevel.Text.Split(' ')[1]), this, volume);
             cform.Show();
             this.Hide();
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            AdminForm aform = new AdminForm();
+            AdminForm aform = new AdminForm(volume);
             aform.Show();
         }
 
@@ -91,6 +93,20 @@ namespace CookBook
         {
             if (!closing)
                 auth.Close();
+        }
+
+        private void pbVolume_Click(object sender, EventArgs e)
+        {
+            if (volume)
+            {
+                volume = false;
+                pbVolume.BackgroundImage = CookBook.Properties.Resources.volumeoff;
+            }
+            else
+            {
+                volume = true;
+                pbVolume.BackgroundImage = CookBook.Properties.Resources.volumeon;
+            }
         }
     }
 }
