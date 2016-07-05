@@ -33,11 +33,19 @@
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.rtbIngredients = new CookBook.TransparentRTB();
+            this.pbUp1 = new System.Windows.Forms.PictureBox();
+            this.pbUp2 = new System.Windows.Forms.PictureBox();
+            this.pbDown2 = new System.Windows.Forms.PictureBox();
+            this.pbDown1 = new System.Windows.Forms.PictureBox();
             this.rtbRecipe = new CookBook.TransparentRTB();
+            this.rtbIngredients = new CookBook.TransparentRTB();
             ((System.ComponentModel.ISupportInitialize)(this.pbForward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUp1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUp2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbForward
@@ -100,15 +108,53 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // rtbIngredients
+            // pbUp1
             // 
-            this.rtbIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbIngredients.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rtbIngredients.Location = new System.Drawing.Point(59, 229);
-            this.rtbIngredients.Name = "rtbIngredients";
-            this.rtbIngredients.Size = new System.Drawing.Size(312, 166);
-            this.rtbIngredients.TabIndex = 7;
-            this.rtbIngredients.Text = "";
+            this.pbUp1.BackColor = System.Drawing.Color.Transparent;
+            this.pbUp1.BackgroundImage = global::CookBook.Properties.Resources.up;
+            this.pbUp1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbUp1.Location = new System.Drawing.Point(307, 196);
+            this.pbUp1.Name = "pbUp1";
+            this.pbUp1.Size = new System.Drawing.Size(64, 27);
+            this.pbUp1.TabIndex = 9;
+            this.pbUp1.TabStop = false;
+            this.pbUp1.MouseHover += new System.EventHandler(this.pbUp1_MouseHover);
+            // 
+            // pbUp2
+            // 
+            this.pbUp2.BackColor = System.Drawing.Color.Transparent;
+            this.pbUp2.BackgroundImage = global::CookBook.Properties.Resources.up;
+            this.pbUp2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbUp2.Location = new System.Drawing.Point(473, 21);
+            this.pbUp2.Name = "pbUp2";
+            this.pbUp2.Size = new System.Drawing.Size(64, 25);
+            this.pbUp2.TabIndex = 10;
+            this.pbUp2.TabStop = false;
+            this.pbUp2.MouseHover += new System.EventHandler(this.pbUp2_MouseHover);
+            // 
+            // pbDown2
+            // 
+            this.pbDown2.BackColor = System.Drawing.Color.Transparent;
+            this.pbDown2.BackgroundImage = global::CookBook.Properties.Resources.down;
+            this.pbDown2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbDown2.Location = new System.Drawing.Point(473, 401);
+            this.pbDown2.Name = "pbDown2";
+            this.pbDown2.Size = new System.Drawing.Size(64, 25);
+            this.pbDown2.TabIndex = 11;
+            this.pbDown2.TabStop = false;
+            this.pbDown2.MouseHover += new System.EventHandler(this.pbDown2_MouseHover);
+            // 
+            // pbDown1
+            // 
+            this.pbDown1.BackColor = System.Drawing.Color.Transparent;
+            this.pbDown1.BackgroundImage = global::CookBook.Properties.Resources.down;
+            this.pbDown1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbDown1.Location = new System.Drawing.Point(307, 401);
+            this.pbDown1.Name = "pbDown1";
+            this.pbDown1.Size = new System.Drawing.Size(64, 25);
+            this.pbDown1.TabIndex = 12;
+            this.pbDown1.TabStop = false;
+            this.pbDown1.MouseHover += new System.EventHandler(this.pbDown1_MouseHover);
             // 
             // rtbRecipe
             // 
@@ -120,6 +166,16 @@
             this.rtbRecipe.TabIndex = 8;
             this.rtbRecipe.Text = "";
             // 
+            // rtbIngredients
+            // 
+            this.rtbIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbIngredients.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rtbIngredients.Location = new System.Drawing.Point(59, 229);
+            this.rtbIngredients.Name = "rtbIngredients";
+            this.rtbIngredients.Size = new System.Drawing.Size(312, 166);
+            this.rtbIngredients.TabIndex = 7;
+            this.rtbIngredients.Text = "";
+            // 
             // RecipeBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,6 +183,10 @@
             this.BackgroundImage = global::CookBook.Properties.Resources.book4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.pbDown1);
+            this.Controls.Add(this.pbDown2);
+            this.Controls.Add(this.pbUp2);
+            this.Controls.Add(this.pbUp1);
             this.Controls.Add(this.rtbRecipe);
             this.Controls.Add(this.rtbIngredients);
             this.Controls.Add(this.btnClose);
@@ -144,6 +204,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbForward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUp1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUp2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +222,9 @@
         private System.Windows.Forms.Button btnClose;
         private TransparentRTB rtbIngredients;
         private TransparentRTB rtbRecipe;
+        private System.Windows.Forms.PictureBox pbUp1;
+        private System.Windows.Forms.PictureBox pbUp2;
+        private System.Windows.Forms.PictureBox pbDown2;
+        private System.Windows.Forms.PictureBox pbDown1;
     }
 }

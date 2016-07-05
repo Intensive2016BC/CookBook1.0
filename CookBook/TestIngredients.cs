@@ -16,6 +16,7 @@ namespace CookBook
         public Recipe MyRecipe { get; set; }
         public List<string> Ingredients { get; set; }
         public List<string> RecipeIngredients { get; set; }
+        public List<int> indexes;
         public int countWrong;
         public bool change = false;
         public bool answer = false;
@@ -32,7 +33,7 @@ namespace CookBook
             int ingrcount = count - 3;
             Ingredients = testManager.GetWrongIngreds(MyRecipe, ingrcount);
             Random rnd = new Random();
-            List<int> indexes = testManager.GetIndexesForDelete(MyRecipe.Ingredients, 3);
+            indexes = testManager.GetIndexesForDelete(MyRecipe.Ingredients, 3);
             RecipeIngredients = new List<string>();
             for (int i = 0; i < MyRecipe.Ingredients.Count; i++)
             {
@@ -48,9 +49,11 @@ namespace CookBook
             {
                 lbRecipeIngreds.Items.Add(RecipeIngredients[i]);
             }
-            lbIngreds.DataSource = Ingredients;
+            for (int i = 0; i < Ingredients.Count; i++)
+            {
+                lbIngreds.Items.Add(Ingredients[i]);
+            }
             lbIngreds.SelectedIndex = -1;
-            change = true;
         }
 
         private void btnAnswer_Click(object sender, EventArgs e)
@@ -61,18 +64,18 @@ namespace CookBook
 
         private void lbIngreds_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (change)
+            if (lbIngreds.SelectedIndex != -1)
             {
                 string selectedItem = lbIngreds.SelectedItem.ToString();
+                int index = RecipeIngredients.IndexOf("____________");
+                RecipeIngredients[index] = selectedItem;
+                lbRecipeIngreds.Items.Clear();
+                for (int i = 0; i < RecipeIngredients.Count; i++)
+                {
+                    lbRecipeIngreds.Items.Add(RecipeIngredients[i]);
+                }
                 if (MyRecipe.Ingredients.Contains(selectedItem))
                 {
-                    int index = MyRecipe.Ingredients.IndexOf(MyRecipe.Ingredients.First(r => r == selectedItem));
-                    RecipeIngredients[index] = selectedItem;
-                    lbRecipeIngreds.Items.Clear();
-                    for (int i = 0; i < RecipeIngredients.Count;i++)
-                    {
-                        lbRecipeIngreds.Items.Add(RecipeIngredients[i]);
-                    }
                     countWrong--;
                 }
             }
@@ -95,6 +98,26 @@ namespace CookBook
             if (!cancelGame && !exitGame && !answer)
                 countWrong = 3;
             DialogResult = DialogResult.OK;
+        }
+
+        private void btnAgain_Click(object sender, EventArgs e)
+        {
+            lbIngreds.Items.Clear();
+            lbRecipeIngreds.Items.Clear();
+            countWrong = indexes.Count;
+            for (int i = 0; i < indexes.Count; i++)
+            {
+                RecipeIngredients[indexes[i]] = "____________";
+            }
+            for (int i = 0; i < RecipeIngredients.Count; i++)
+            {
+                lbRecipeIngreds.Items.Add(RecipeIngredients[i]);
+            }
+            for (int i = 0; i < Ingredients.Count; i++)
+            {
+                lbIngreds.Items.Add(Ingredients[i]);
+            }
+            lbIngreds.SelectedIndex = -1;
         }
     }
 }

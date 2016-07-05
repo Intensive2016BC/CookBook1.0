@@ -13,6 +13,7 @@ namespace CookBook
 {
     public partial class RecipeBookForm : Form
     {
+        private int CurentPosition = 0;
         public RecipeBookForm(int level, int category, CategoriesForm cform, bool vol)
         {
             InitializeComponent();
@@ -20,6 +21,11 @@ namespace CookBook
             Category = category;
             CForm = cform;
             volume = vol;
+            pbUp2.Visible = false;
+            pbUp1.Visible = false;
+            pbDown1.Visible = false;
+            pbDown2.Visible = false;
+            t.ToolTipTitle = "Обратите внимание";
         }
         CategoriesForm CForm;
         int Level;
@@ -27,15 +33,56 @@ namespace CookBook
         List<Recipe> recipes;
         int Index = 0;
         bool volume;
+        ToolTip t = new ToolTip();
 
         void rtbIngredients_MouseWheel(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(e.Delta.ToString());
+            int position = CurentPosition -= e.Delta;
+
+            if (position >= 0)
+            {
+                CurentPosition = position;
+                rtbRecipe.SelectionStart = CurentPosition;
+                rtbRecipe.ScrollToCaret();
+            }
+            if (position < 0)
+            {
+                CurentPosition = 120;
+            }
+            if (rtbRecipe.SelectionStart == rtbRecipe.TextLength)
+            {
+                CurentPosition -= 120;
+            }
         }
 
         void rtbRecipe_MouseWheel(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(e.Delta.ToString());
+            int position = CurentPosition -= e.Delta;
+
+            if (position >= 0)
+            {
+                CurentPosition = position;
+                rtbRecipe.SelectionStart = CurentPosition;
+                rtbRecipe.ScrollToCaret();
+            }
+            if (position < 0)
+            {
+                CurentPosition = 120;
+            }
+            if (rtbRecipe.SelectionStart == rtbRecipe.TextLength)
+            {
+                CurentPosition -= 120;
+            }
+        }
+
+        private int LinesCount(RichTextBox rtb)
+        {
+            Graphics g = CreateGraphics();
+            float count = (g.MeasureString(rtb.Text, rtb.Font).Width / rtb.Width);
+            int n = (int)count;
+            if (count > n)
+                n++;
+            return n;
         }
 
         private void RecipeBookForm_Load(object sender, EventArgs e)
@@ -72,6 +119,27 @@ namespace CookBook
                     rtbRecipe.Text = recipes[0].Description.Replace("#", "");
                     pbBack.Visible = false;
                     if (recipes.Count == 1) pbForward.Visible = false;
+
+                    if (rtbRecipe.Text.Length > 450)
+                    {
+                        pbUp2.Visible = true;
+                        pbDown2.Visible = true;
+                    }
+                    else
+                    {
+                        pbUp2.Visible = false;
+                        pbDown2.Visible = false;
+                    }
+                    if (rtbIngredients.Lines.Length > 6)
+                    {
+                        pbUp1.Visible = true;
+                        pbDown1.Visible = true;
+                    }
+                    else
+                    {
+                        pbUp1.Visible = false;
+                        pbDown1.Visible = false;
+                    }
                 }
             }
             catch(Exception ex)
@@ -101,6 +169,26 @@ namespace CookBook
                     pbForward.Visible = false;
                 else
                     pbForward.Visible = true;
+                if (rtbRecipe.Text.Length > 450)
+                {
+                    pbUp2.Visible = true;
+                    pbDown2.Visible = true;
+                }
+                else
+                {
+                    pbUp2.Visible = false;
+                    pbDown2.Visible = false;
+                }
+                if (rtbIngredients.Lines.Length > 6)
+                {
+                    pbUp1.Visible = true;
+                    pbDown1.Visible = true;
+                }
+                else
+                {
+                    pbUp1.Visible = false;
+                    pbDown1.Visible = false;
+                }
             }
         }
 
@@ -125,6 +213,26 @@ namespace CookBook
                     pbBack.Visible = false;
                 else
                     pbBack.Visible = true;
+                if (rtbRecipe.Text.Length > 450)
+                {
+                    pbUp2.Visible = true;
+                    pbDown2.Visible = true;
+                }
+                else
+                {
+                    pbUp2.Visible = false;
+                    pbDown2.Visible = false;
+                }
+                if (rtbIngredients.Lines.Length > 6)
+                {
+                    pbUp1.Visible = true;
+                    pbDown1.Visible = true;
+                }
+                else
+                {
+                    pbUp1.Visible = false;
+                    pbDown1.Visible = false;
+                }
             }
         }
 
@@ -143,6 +251,26 @@ namespace CookBook
             base.Capture = false;
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
             this.WndProc(ref m);
+        }
+
+        private void pbUp1_MouseHover(object sender, EventArgs e)
+        {
+            t.SetToolTip(pbUp1, "Список ингредиентов можно прокрутить");
+        }
+
+        private void pbDown1_MouseHover(object sender, EventArgs e)
+        {
+            t.SetToolTip(pbDown1, "Список ингредиентов можно прокрутить");
+        }
+
+        private void pbUp2_MouseHover(object sender, EventArgs e)
+        {
+            t.SetToolTip(pbUp2, "Рецепт можно прокрутить");
+        }
+
+        private void pbDown2_MouseHover(object sender, EventArgs e)
+        {
+            t.SetToolTip(pbDown2, "Рецепт можно прокрутить");
         }
     }
 }

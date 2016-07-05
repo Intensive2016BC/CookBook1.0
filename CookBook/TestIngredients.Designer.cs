@@ -35,6 +35,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.btnExitGame = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAgain = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelInstruction
@@ -134,6 +135,21 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnAgain
+            // 
+            this.btnAgain.BackColor = System.Drawing.Color.Peru;
+            this.btnAgain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnAgain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgain.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAgain.Location = new System.Drawing.Point(580, 42);
+            this.btnAgain.Name = "btnAgain";
+            this.btnAgain.Size = new System.Drawing.Size(122, 37);
+            this.btnAgain.TabIndex = 12;
+            this.btnAgain.Text = "Сбросить";
+            this.btnAgain.UseVisualStyleBackColor = false;
+            this.btnAgain.Click += new System.EventHandler(this.btnAgain_Click);
+            // 
             // TestIngredients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +157,7 @@
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(714, 361);
+            this.Controls.Add(this.btnAgain);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.lblName);
@@ -168,5 +185,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnExitGame;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAgain;
     }
 }
