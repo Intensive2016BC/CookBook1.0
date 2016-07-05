@@ -19,16 +19,6 @@ namespace CookBook
             Level = level;
             User = user;
             this.gform = gform;
-            labelBakery.BackColor = Color.Transparent;
-            labelBreakfast.BackColor = Color.Transparent;
-            labelMainMeal.BackColor = Color.Transparent;
-            labelSalad.BackColor = Color.Transparent;
-            labelSoup.BackColor = Color.Transparent;
-            pbBakery.BackColor = Color.Transparent;
-            pbBreakfast.BackColor = Color.Transparent;
-            pbMainMeal.BackColor = Color.Transparent;
-            pbSalad.BackColor = Color.Transparent;
-            pbSoup.BackColor = Color.Transparent;
             volume = vol;
         }
         GameForm gform;

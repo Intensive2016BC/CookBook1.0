@@ -49,6 +49,7 @@
             // labelBreakfast
             // 
             this.labelBreakfast.AutoSize = true;
+            this.labelBreakfast.BackColor = System.Drawing.Color.Transparent;
             this.labelBreakfast.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelBreakfast.Location = new System.Drawing.Point(21, 23);
             this.labelBreakfast.Name = "labelBreakfast";
@@ -59,6 +60,7 @@
             // labelMainMeal
             // 
             this.labelMainMeal.AutoSize = true;
+            this.labelMainMeal.BackColor = System.Drawing.Color.Transparent;
             this.labelMainMeal.Font = new System.Drawing.Font("Candara", 14F);
             this.labelMainMeal.Location = new System.Drawing.Point(239, 3);
             this.labelMainMeal.Name = "labelMainMeal";
@@ -69,6 +71,7 @@
             // labelBakery
             // 
             this.labelBakery.AutoSize = true;
+            this.labelBakery.BackColor = System.Drawing.Color.Transparent;
             this.labelBakery.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelBakery.Location = new System.Drawing.Point(21, 250);
             this.labelBakery.Name = "labelBakery";
@@ -79,6 +82,7 @@
             // labelSalad
             // 
             this.labelSalad.AutoSize = true;
+            this.labelSalad.BackColor = System.Drawing.Color.Transparent;
             this.labelSalad.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSalad.Location = new System.Drawing.Point(141, 133);
             this.labelSalad.Name = "labelSalad";
@@ -89,6 +93,7 @@
             // labelSoup
             // 
             this.labelSoup.AutoSize = true;
+            this.labelSoup.BackColor = System.Drawing.Color.Transparent;
             this.labelSoup.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSoup.Location = new System.Drawing.Point(258, 250);
             this.labelSoup.Name = "labelSoup";
@@ -98,6 +103,7 @@
             // 
             // pbSoup
             // 
+            this.pbSoup.BackColor = System.Drawing.Color.Transparent;
             this.pbSoup.BackgroundImage = global::CookBook.Properties.Resources.soup;
             this.pbSoup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbSoup.Location = new System.Drawing.Point(253, 279);
@@ -109,6 +115,7 @@
             // 
             // pbSalad
             // 
+            this.pbSalad.BackColor = System.Drawing.Color.Transparent;
             this.pbSalad.BackgroundImage = global::CookBook.Properties.Resources.salad;
             this.pbSalad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbSalad.Location = new System.Drawing.Point(145, 162);
@@ -120,6 +127,7 @@
             // 
             // pbBakery
             // 
+            this.pbBakery.BackColor = System.Drawing.Color.Transparent;
             this.pbBakery.BackgroundImage = global::CookBook.Properties.Resources.bakery;
             this.pbBakery.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbBakery.Location = new System.Drawing.Point(33, 279);
@@ -131,6 +139,7 @@
             // 
             // pbBreakfast
             // 
+            this.pbBreakfast.BackColor = System.Drawing.Color.Transparent;
             this.pbBreakfast.BackgroundImage = global::CookBook.Properties.Resources.breakfast;
             this.pbBreakfast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbBreakfast.Location = new System.Drawing.Point(33, 52);
@@ -142,6 +151,7 @@
             // 
             // pbMainMeal
             // 
+            this.pbMainMeal.BackColor = System.Drawing.Color.Transparent;
             this.pbMainMeal.BackgroundImage = global::CookBook.Properties.Resources.mainmeal;
             this.pbMainMeal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbMainMeal.Location = new System.Drawing.Point(253, 52);

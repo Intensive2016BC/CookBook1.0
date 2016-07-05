@@ -38,6 +38,7 @@
             // 
             // Level1
             // 
+            this.Level1.BackColor = System.Drawing.Color.Transparent;
             this.Level1.FlatAppearance.BorderSize = 0;
             this.Level1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.Level1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -48,11 +49,12 @@
             this.Level1.Size = new System.Drawing.Size(340, 50);
             this.Level1.TabIndex = 0;
             this.Level1.Text = "Уровень 1";
-            this.Level1.UseVisualStyleBackColor = true;
+            this.Level1.UseVisualStyleBackColor = false;
             this.Level1.Click += new System.EventHandler(this.Level1_Click);
             // 
             // Level2
             // 
+            this.Level2.BackColor = System.Drawing.Color.Transparent;
             this.Level2.FlatAppearance.BorderSize = 0;
             this.Level2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.Level2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -63,11 +65,12 @@
             this.Level2.Size = new System.Drawing.Size(340, 50);
             this.Level2.TabIndex = 1;
             this.Level2.Text = "Уровень 2";
-            this.Level2.UseVisualStyleBackColor = true;
+            this.Level2.UseVisualStyleBackColor = false;
             this.Level2.Click += new System.EventHandler(this.Level2_Click);
             // 
             // Level3
             // 
+            this.Level3.BackColor = System.Drawing.Color.Transparent;
             this.Level3.FlatAppearance.BorderSize = 0;
             this.Level3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.Level3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -78,11 +81,12 @@
             this.Level3.Size = new System.Drawing.Size(340, 50);
             this.Level3.TabIndex = 2;
             this.Level3.Text = "Уровень 3";
-            this.Level3.UseVisualStyleBackColor = true;
+            this.Level3.UseVisualStyleBackColor = false;
             this.Level3.Click += new System.EventHandler(this.Level3_Click);
             // 
             // Level4
             // 
+            this.Level4.BackColor = System.Drawing.Color.Transparent;
             this.Level4.FlatAppearance.BorderSize = 0;
             this.Level4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.Level4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -93,11 +97,12 @@
             this.Level4.Size = new System.Drawing.Size(340, 50);
             this.Level4.TabIndex = 3;
             this.Level4.Text = "Уровень 4";
-            this.Level4.UseVisualStyleBackColor = true;
+            this.Level4.UseVisualStyleBackColor = false;
             this.Level4.Click += new System.EventHandler(this.Level4_Click);
             // 
             // Level5
             // 
+            this.Level5.BackColor = System.Drawing.Color.Transparent;
             this.Level5.FlatAppearance.BorderSize = 0;
             this.Level5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.Level5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -108,7 +113,7 @@
             this.Level5.Size = new System.Drawing.Size(340, 50);
             this.Level5.TabIndex = 4;
             this.Level5.Text = "Уровень 5";
-            this.Level5.UseVisualStyleBackColor = true;
+            this.Level5.UseVisualStyleBackColor = false;
             this.Level5.Click += new System.EventHandler(this.Level5_Click);
             // 
             // btnClose

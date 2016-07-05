@@ -18,12 +18,6 @@ namespace CookBook
         {
             InitializeComponent();
             volume = true;
-            btnAdmin.BackColor = Color.Transparent;
-            btnClose.BackColor = Color.Transparent;
-            btnGame.BackColor = Color.Transparent;
-            btnClose.BackColor = Color.Transparent;
-            btnCookBook.BackColor = Color.Transparent;
-            btnUserChange.BackColor = Color.Transparent;
             UserName = username;
             this.auth = auth;
             UserManager userManager = new UserManager();

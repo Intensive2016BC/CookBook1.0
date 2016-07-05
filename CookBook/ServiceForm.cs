@@ -146,18 +146,6 @@ namespace CookBook
                         }
                         break;
                     }
-                case "edit":
-                case "delete":
-                    {
-                        number = 1;
-                        labels[0].Text = "ID записи:";
-                        labels[0].Location = new Point(x, y);
-                        fields[0].Location = new Point(x + 200, y);
-                        y += 40;
-                        this.Controls.Add(labels[0]);
-                        this.Controls.Add(fields[0]);
-                        break;
-                    }
             }
             buttonOk.Location = new Point(x, y);
             this.Controls.Add(buttonOk);
@@ -167,11 +155,6 @@ namespace CookBook
         
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            if (mission == "edit" || mission == "delete")
-            {
-                recordId = fields[0].Text;
-                DialogResult = DialogResult.OK;
-            }
             switch (entity)
             {
                 case "Ingredients":

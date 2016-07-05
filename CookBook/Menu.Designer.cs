@@ -42,6 +42,7 @@
             // 
             // btnGame
             // 
+            this.btnGame.BackColor = System.Drawing.Color.Transparent;
             this.btnGame.FlatAppearance.BorderSize = 0;
             this.btnGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.btnGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -55,11 +56,12 @@
             this.btnGame.TabIndex = 0;
             this.btnGame.Text = "Начать играть";
             this.btnGame.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGame.UseVisualStyleBackColor = true;
+            this.btnGame.UseVisualStyleBackColor = false;
             this.btnGame.Click += new System.EventHandler(this.btnGame_Click);
             // 
             // btnCookBook
             // 
+            this.btnCookBook.BackColor = System.Drawing.Color.Transparent;
             this.btnCookBook.FlatAppearance.BorderSize = 0;
             this.btnCookBook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.btnCookBook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -73,11 +75,12 @@
             this.btnCookBook.TabIndex = 1;
             this.btnCookBook.Text = "Посмотреть книгу рецептов";
             this.btnCookBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCookBook.UseVisualStyleBackColor = true;
+            this.btnCookBook.UseVisualStyleBackColor = false;
             this.btnCookBook.Click += new System.EventHandler(this.btnCookBook_Click);
             // 
             // btnUserChange
             // 
+            this.btnUserChange.BackColor = System.Drawing.Color.Transparent;
             this.btnUserChange.FlatAppearance.BorderSize = 0;
             this.btnUserChange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.btnUserChange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -91,11 +94,12 @@
             this.btnUserChange.TabIndex = 2;
             this.btnUserChange.Text = "Сменить пользователя";
             this.btnUserChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUserChange.UseVisualStyleBackColor = true;
+            this.btnUserChange.UseVisualStyleBackColor = false;
             this.btnUserChange.Click += new System.EventHandler(this.btnUserChange_Click);
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -109,11 +113,12 @@
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Выход";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAdmin
             // 
+            this.btnAdmin.BackColor = System.Drawing.Color.Transparent;
             this.btnAdmin.FlatAppearance.BorderSize = 0;
             this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -127,7 +132,7 @@
             this.btnAdmin.TabIndex = 7;
             this.btnAdmin.Text = " Администрирование";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // lblUserName

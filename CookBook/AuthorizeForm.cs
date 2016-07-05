@@ -32,6 +32,7 @@ namespace CookBook
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            MusicManager.playSound("cartoon008.wav");
             if (Admin && cbUsers.SelectedItem.ToString() != "Admin")
             {
                 Admin = false;

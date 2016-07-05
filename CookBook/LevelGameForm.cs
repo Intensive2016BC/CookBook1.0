@@ -32,11 +32,6 @@ namespace CookBook
                     btns[i].Enabled = false;
                 }
             }
-            Level1.BackColor = Color.Transparent;
-            Level2.BackColor = Color.Transparent;
-            Level3.BackColor = Color.Transparent;
-            Level4.BackColor = Color.Transparent;
-            Level5.BackColor = Color.Transparent;
             volume = vol;
         }
         GameForm gform;

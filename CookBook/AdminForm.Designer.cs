@@ -47,9 +47,11 @@
             this.tables.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tables.Location = new System.Drawing.Point(13, 13);
+            this.tables.MultiSelect = false;
             this.tables.Name = "tables";
             this.tables.ReadOnly = true;
             this.tables.RowHeadersVisible = false;
+            this.tables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tables.Size = new System.Drawing.Size(518, 266);
             this.tables.TabIndex = 0;
             // 

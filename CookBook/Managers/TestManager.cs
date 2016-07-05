@@ -145,8 +145,6 @@ namespace CookBook.Managers
                 int index = rand.Next(0, indexes.Count);
                 Random TestType = new Random();
                 int Type = TestType.Next(1, 4);
-                Type = 2;
-
                 if (Type == 1)
                 {
                     int result = testManager.CreateTestIngred(recipes[indexes[index]]);

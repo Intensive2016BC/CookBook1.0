@@ -38,6 +38,7 @@
             // 
             // buttonCategory
             // 
+            this.buttonCategory.BackColor = System.Drawing.Color.Transparent;
             this.buttonCategory.FlatAppearance.BorderSize = 0;
             this.buttonCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.buttonCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -49,11 +50,12 @@
             this.buttonCategory.TabIndex = 0;
             this.buttonCategory.Text = "Выбрать категорию";
             this.buttonCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCategory.UseVisualStyleBackColor = true;
+            this.buttonCategory.UseVisualStyleBackColor = false;
             this.buttonCategory.Click += new System.EventHandler(this.buttonCategory_Click);
             // 
             // buttonLevel
             // 
+            this.buttonLevel.BackColor = System.Drawing.Color.Transparent;
             this.buttonLevel.FlatAppearance.BorderSize = 0;
             this.buttonLevel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.buttonLevel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -65,11 +67,12 @@
             this.buttonLevel.TabIndex = 1;
             this.buttonLevel.Text = "Выбрать уровень";
             this.buttonLevel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLevel.UseVisualStyleBackColor = true;
+            this.buttonLevel.UseVisualStyleBackColor = false;
             this.buttonLevel.Click += new System.EventHandler(this.buttonLevel_Click);
             // 
             // buttonRandom
             // 
+            this.buttonRandom.BackColor = System.Drawing.Color.Transparent;
             this.buttonRandom.FlatAppearance.BorderSize = 0;
             this.buttonRandom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.buttonRandom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
@@ -81,11 +84,12 @@
             this.buttonRandom.TabIndex = 2;
             this.buttonRandom.Text = "Случайная игра";
             this.buttonRandom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRandom.UseVisualStyleBackColor = true;
+            this.buttonRandom.UseVisualStyleBackColor = false;
             this.buttonRandom.Click += new System.EventHandler(this.buttonRandom_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::CookBook.Properties.Resources.food;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);

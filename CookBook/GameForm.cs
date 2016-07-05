@@ -19,16 +19,13 @@ namespace CookBook
             this.Level = level;
             User = user;
             this.menu = menu;
-            pictureBox1.BackColor = Color.Transparent;
-            buttonCategory.BackColor = Color.Transparent;
-            buttonLevel.BackColor = Color.Transparent;
-            buttonRandom.BackColor = Color.Transparent;
             volume = vol;
         }
         string User;
         int Level;
         Menu menu;
         bool volume;
+        bool closing = false;
 
         private void buttonCategory_Click(object sender, EventArgs e)
         {
@@ -68,16 +65,21 @@ namespace CookBook
         {
             menu.Show();
             menu.ChangeLabelLevel();
+            closing = true;
+            this.Close();
         }
 
         private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ReturnToMenu();
+            if (!closing)
+            {
+                ReturnToMenu();
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ReturnToMenu();
         }
     }
 }

@@ -89,57 +89,30 @@ namespace CookBook
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            ServiceForm f = null;
             ServiceForm insert = null;
-            f = new ServiceForm("edit");
-            f.mission = "edit";
-            if (f.ShowDialog() == DialogResult.OK)
-            {
-                if (!f.cancel)
-                {
-                    string id = f.recordId;
-                    string entity = "";
-                    f.Close();
-                    if (rbtnUser.Checked == true)
+            string id = "";
+            id = tables.Rows[tables.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
+            if (rbtnUser.Checked == true)
                     {
                         insert = new ServiceForm("User");
-                        entity = "User";
-                        if (!dbManager.CheckId("Login='"+id+"'", entity))
-                        {
-                            InfoForm iform = new InfoForm("ID не существует!");
-                            iform.Show();
-                            return;
-                        }
                     }
                     else if (rbtnCategory.Checked == true)
                     {
                         insert = new ServiceForm("Category");
-                        entity = "Category";
                     }
                     else if (rbtnRecipe.Checked == true)
                     {
                         insert = new ServiceForm("Recipe");
-                        entity = "Recipe";
                     }
                     else if (rbtnIngreds.Checked == true)
                     {
                         insert = new ServiceForm("Ingredients");
-                        entity = "Ingredients";
                     }
                     else
                     {
                         InfoForm iform = new InfoForm("Выберите таблицу!");
                         iform.Show();
                         return;
-                    }
-                    if (entity != "User")
-                    {
-                        if (!dbManager.CheckId("id=" + id, entity))
-                        {
-                            InfoForm iform = new InfoForm("ID не существует!");
-                            iform.Show();
-                            return;
-                        }
                     }
                     insert.recordId = id;
                     insert.mission = "edit";
@@ -148,20 +121,15 @@ namespace CookBook
                     {
                         insert.Close();
                     }
-                }
-            }
             UpdateTables();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            ServiceForm f = new ServiceForm("delete");
-            f.mission = "delete";
-            f.ShowDialog();
-            string id = f.recordId;
+            string id = "";
+            id = tables.Rows[tables.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
             try
             {
-                if (!f.cancel)
                 {
                     if (rbtnUser.Checked == true && id !="Admin")
                         dbManager.Delete("User", "Login='" + id+"'");
@@ -178,9 +146,9 @@ namespace CookBook
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                InfoForm iform = new InfoForm("Записи не найдено!");
+                InfoForm iform = new InfoForm(ex.Message);
                 iform.Show();
             }
             UpdateTables();
@@ -191,5 +159,6 @@ namespace CookBook
             tables.DataSource = dbManager.GetFullList("Ingredients");
             btnEdit.Enabled = false;
         }
+        
     }
 }

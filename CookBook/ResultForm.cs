@@ -28,7 +28,7 @@ namespace CookBook
                 resultsTable.Rows[i].Height = 30;
                 UserPoints += Convert.ToDouble(results[i].Split(',')[1]);
             }
-            if (UserPoints == points)
+            if (UserPoints == points && UserPoints != 0)
             {
                 label1.Text = "Молодец, так держать!";
             }

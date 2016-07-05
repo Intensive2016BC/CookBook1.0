@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="Managers\CategoryManager.cs" />
     <Compile Include="Managers\DatabaseManager.cs" />
+    <Compile Include="Managers\MusicManager.cs" />
     <Compile Include="Managers\RecipeManager.cs" />
     <Compile Include="Managers\TestManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
@@ -252,9 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backmenu2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\volumeoff.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\volumeoff.png" />

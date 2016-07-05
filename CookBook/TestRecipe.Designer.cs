@@ -160,7 +160,7 @@
             this.Controls.Add(this.btnAnswer);
             this.Controls.Add(this.labelInstruction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "TestRecipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тестирование";
