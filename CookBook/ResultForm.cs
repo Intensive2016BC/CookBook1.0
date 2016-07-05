@@ -25,17 +25,18 @@ namespace CookBook
             {
                 resultsTable.Rows[i].Cells[0].Value = results[i].Split(',')[0];
                 resultsTable.Rows[i].Cells[1].Value = results[i].Split(',')[1];
+                resultsTable.Rows[i].Height = 30;
                 UserPoints += Convert.ToDouble(results[i].Split(',')[1]);
             }
             if (UserPoints == points)
             {
                 label1.Text = "Молодец, так держать!";
             }
-            else if (points/UserPoints*100 > 70)
+            else if ((UserPoints/points) > 0.7)
             {
                 label1.Text = "Хорошо, но вы можете лучше!";
             }
-            else if (points/UserPoints*100 > 40)
+            else if ((UserPoints/points) > 0.4)
             {
                 label1.Text = "У вас почти получилось";
             }
