@@ -67,16 +67,20 @@ namespace CookBook
             if (lbIngreds.SelectedIndex != -1)
             {
                 string selectedItem = lbIngreds.SelectedItem.ToString();
-                int index = RecipeIngredients.IndexOf("____________");
-                RecipeIngredients[index] = selectedItem;
-                lbRecipeIngreds.Items.Clear();
-                for (int i = 0; i < RecipeIngredients.Count; i++)
+                int index = -1;
+                index = RecipeIngredients.IndexOf("____________");
+                if (index != -1)
                 {
-                    lbRecipeIngreds.Items.Add(RecipeIngredients[i]);
-                }
-                if (MyRecipe.Ingredients.Contains(selectedItem))
-                {
-                    countWrong--;
+                    RecipeIngredients[index] = selectedItem;
+                    lbRecipeIngreds.Items.Clear();
+                    for (int i = 0; i < RecipeIngredients.Count; i++)
+                    {
+                        lbRecipeIngreds.Items.Add(RecipeIngredients[i]);
+                    }
+                    if (MyRecipe.Ingredients.Contains(selectedItem))
+                    {
+                        countWrong--;
+                    }
                 }
             }
         }
