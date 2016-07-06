@@ -22,14 +22,14 @@ namespace CookBook
         {
             if (tbUserName.Text.Contains(" ") || tbUserName.Text == "" || tbUserName.Text.Length > 25)
             {
-                InfoForm iform = new InfoForm("Введенное имя слишком короткое, длинное или содержит пробелы!");
+                InfoForm iform = new InfoForm("Введенное имя слишком короткое, длинное или содержит пробелы!", true);
                 iform.Show();
                 return;
             } 
             UserManager userManager = new UserManager();
             if (userManager.CreateNewUser(tbUserName.Text))
             {
-                InfoForm iform = new InfoForm("Пользователь успешно добавлен!");
+                InfoForm iform = new InfoForm("Пользователь успешно добавлен!", true);
                 if (iform.ShowDialog() == DialogResult.OK)
                 {
                     this.Close();
@@ -37,7 +37,7 @@ namespace CookBook
             }
             else
             {
-                InfoForm inform = new InfoForm("Пользователь с такими именем уже существует");
+                InfoForm inform = new InfoForm("Пользователь с такими именем уже существует", true);
                 if (inform.ShowDialog() == DialogResult.OK)
                 {
                     this.Close();

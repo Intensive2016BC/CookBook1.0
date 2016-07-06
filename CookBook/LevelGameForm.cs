@@ -42,26 +42,36 @@ namespace CookBook
 
         private void Level1_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             StartTest(1);
         }
 
         private void Level2_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             StartTest(2);
         }
 
         private void Level3_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             StartTest(3);
         }
 
         private void Level4_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             StartTest(4);
         }
 
         private void Level5_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             StartTest(5);
         }
 
@@ -80,7 +90,7 @@ namespace CookBook
                 else
                     indexes.Add(i);
             }
-            TestManager testManager = new TestManager();
+            TestManager testManager = new TestManager(volume);
             bool GameEnd = testManager.StartGame(recipes, indexes, User);
             if (GameEnd)
             {
@@ -97,6 +107,8 @@ namespace CookBook
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             this.Close();
         }
     }

@@ -47,6 +47,7 @@
             this.cbUsers.Name = "cbUsers";
             this.cbUsers.Size = new System.Drawing.Size(300, 31);
             this.cbUsers.TabIndex = 7;
+            this.cbUsers.SelectedIndexChanged += new System.EventHandler(this.cbUsers_SelectedIndexChanged);
             // 
             // buttonExit
             // 

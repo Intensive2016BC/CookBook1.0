@@ -61,6 +61,8 @@ namespace CookBook
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             this.Close();
         }
     }

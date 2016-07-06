@@ -30,6 +30,7 @@
         {
             this.btnRegistration = new System.Windows.Forms.Button();
             this.tbUserName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRegistration
@@ -41,7 +42,7 @@
             this.btnRegistration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
             this.btnRegistration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistration.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRegistration.Location = new System.Drawing.Point(37, 100);
+            this.btnRegistration.Location = new System.Drawing.Point(37, 124);
             this.btnRegistration.Name = "btnRegistration";
             this.btnRegistration.Size = new System.Drawing.Size(210, 39);
             this.btnRegistration.TabIndex = 0;
@@ -54,10 +55,21 @@
             this.tbUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbUserName.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbUserName.Location = new System.Drawing.Point(12, 35);
+            this.tbUserName.Location = new System.Drawing.Point(12, 66);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(260, 33);
             this.tbUserName.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(259, 26);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Введите имя пользователя";
             // 
             // RegistrationForm
             // 
@@ -65,7 +77,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CookBook.Properties.Resources.background11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(284, 151);
+            this.ClientSize = new System.Drawing.Size(284, 175);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.btnRegistration);
             this.MaximizeBox = false;
@@ -81,5 +94,6 @@
 
         private System.Windows.Forms.Button btnRegistration;
         private System.Windows.Forms.TextBox tbUserName;
+        private System.Windows.Forms.Label label1;
     }
 }

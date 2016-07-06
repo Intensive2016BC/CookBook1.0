@@ -12,9 +12,15 @@ namespace CookBook.Managers
 {
     public class TestManager
     {
+        public TestManager(bool volume)
+        {
+            Volume = volume;
+        }
+        bool Volume = false;
+
         public int CreateTestName(List<Recipe> recipes, int index)
         {
-            TestName tn = new TestName(recipes[index].Image, recipes[index].Name, recipes);
+            TestName tn = new TestName(recipes[index].Image, recipes[index].Name, recipes, Volume);
             if (tn.ShowDialog() == DialogResult.OK)
             {
                 if (tn.cancelGame)
@@ -81,7 +87,7 @@ namespace CookBook.Managers
         }
         public int CreateTestIngred(Recipe recipe)
         {
-            TestIngredients ti = new TestIngredients(recipe);
+            TestIngredients ti = new TestIngredients(recipe, Volume);
             if (ti.ShowDialog() == DialogResult.OK)
             {
                 if (ti.cancelGame)
@@ -103,7 +109,7 @@ namespace CookBook.Managers
 
         public int CreateTestRecipe(Recipe recipe)
         {
-            TestRecipe tr = new TestRecipe(recipe);
+            TestRecipe tr = new TestRecipe(recipe, Volume);
             if (tr.ShowDialog() == DialogResult.OK)
             {
                 if (tr.cancelGame)
@@ -132,7 +138,6 @@ namespace CookBook.Managers
 
         public bool StartGame(List<Recipe> recipes, List<int> indexes, string User)
         {
-            TestManager testManager = new TestManager();
             int count = 0;
             double allPoints = 0;
             List<int> DoneRecipes = new List<int>();
@@ -147,7 +152,7 @@ namespace CookBook.Managers
                 int Type = TestType.Next(1, 4);
                 if (Type == 1)
                 {
-                    int result = testManager.CreateTestIngred(recipes[indexes[index]]);
+                    int result = CreateTestIngred(recipes[indexes[index]]);
                     if (result == -1)
                     {
                         return false;
@@ -185,7 +190,7 @@ namespace CookBook.Managers
                 }
                 if (Type == 2)
                 {
-                    int result = testManager.CreateTestName(recipes, indexes[index]);
+                    int result = CreateTestName(recipes, indexes[index]);
                     if (result == -1)
                     {
                         return false;
@@ -209,7 +214,7 @@ namespace CookBook.Managers
                 }
                 if (Type == 3)
                 {
-                    int result = testManager.CreateTestRecipe(recipes[indexes[index]]);
+                    int result = CreateTestRecipe(recipes[indexes[index]]);
                     if (result == -1)
                     {
                         return false;
@@ -233,7 +238,7 @@ namespace CookBook.Managers
                 }
                 indexes.RemoveAt(index);
             }
-            ResultForm rform = new ResultForm(Results, allPoints);
+            ResultForm rform = new ResultForm(Results, allPoints, Volume);
             UserManager userManager = new UserManager();
             userManager.ChangeUserPoints(User, count, DoneRecipes);
             if (rform.ShowDialog() == DialogResult.OK)

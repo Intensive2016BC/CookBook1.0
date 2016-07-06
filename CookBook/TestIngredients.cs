@@ -22,13 +22,15 @@ namespace CookBook
         public bool answer = false;
         public bool exitGame = false;
         public bool cancelGame = false;
+        bool volume;
 
-        public TestIngredients(Recipe recipe)
+        public TestIngredients(Recipe recipe, bool vol)
         {
             InitializeComponent();
             MyRecipe = recipe;
+            volume = vol;
             lblName.Text += recipe.Name;
-            TestManager testManager = new TestManager();
+            TestManager testManager = new TestManager(false);
             int count = MyRecipe.Ingredients.Count;
             int ingrcount = count - 3;
             Ingredients = testManager.GetWrongIngreds(MyRecipe, ingrcount);
@@ -58,6 +60,8 @@ namespace CookBook
 
         private void btnAnswer_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             answer = true;
             DialogResult = DialogResult.OK;
         }
@@ -69,7 +73,7 @@ namespace CookBook
                 string selectedItem = lbIngreds.SelectedItem.ToString();
                 int index = -1;
                 index = RecipeIngredients.IndexOf("____________");
-                if (index != -1)
+                if (index != -1 && !lbRecipeIngreds.Items.Contains(selectedItem))
                 {
                     RecipeIngredients[index] = selectedItem;
                     lbRecipeIngreds.Items.Clear();
@@ -87,12 +91,16 @@ namespace CookBook
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             cancelGame = true;
             DialogResult = DialogResult.OK;
         }
 
         private void btnExitGame_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             exitGame = true;
             DialogResult = DialogResult.OK;
         }
@@ -106,6 +114,8 @@ namespace CookBook
 
         private void btnAgain_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             lbIngreds.Items.Clear();
             lbRecipeIngreds.Items.Clear();
             countWrong = indexes.Count;

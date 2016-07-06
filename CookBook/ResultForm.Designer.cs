@@ -87,9 +87,8 @@
             this.label1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(76, 209);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 26);
+            this.label1.Size = new System.Drawing.Size(0, 26);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ResultForm
@@ -104,6 +103,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ResultForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.ResultForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.resultsTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

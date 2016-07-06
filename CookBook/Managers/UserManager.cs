@@ -43,11 +43,6 @@ namespace CookBook.Managers
                 if (users[i].Login == username)
                 {
                     users[i].Points += points;
-                    //for (int j = 0; j < recipes.Count; j++)
-                    //{
-                    //    if (!users[i].DoneIds.Contains(recipes[j]))
-                    //    users[i].DoneIds.Add(recipes[j]);
-                    //}
                     DatabaseManager dbManager = new DatabaseManager();
                     dbManager.Update("User", "Points", users[i].Points.ToString(), "Login", username);
                 }

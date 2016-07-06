@@ -21,9 +21,7 @@ namespace CookBook
             Category = category;
             CForm = cform;
             volume = vol;
-            pbUp2.Visible = false;
-            pbUp1.Visible = false;
-            pbDown1.Visible = false;
+            pbDown.Visible = false;
             pbDown2.Visible = false;
             t.ToolTipTitle = "Обратите внимание";
         }
@@ -121,25 +119,13 @@ namespace CookBook
                     if (recipes.Count == 1) pbForward.Visible = false;
 
                     if (rtbRecipe.Text.Length > 450)
-                    {
-                        pbUp2.Visible = true;
                         pbDown2.Visible = true;
-                    }
                     else
-                    {
-                        pbUp2.Visible = false;
                         pbDown2.Visible = false;
-                    }
                     if (rtbIngredients.Lines.Length > 6)
-                    {
-                        pbUp1.Visible = true;
-                        pbDown1.Visible = true;
-                    }
+                        pbDown.Visible = true;
                     else
-                    {
-                        pbUp1.Visible = false;
-                        pbDown1.Visible = false;
-                    }
+                        pbDown.Visible = false;
                 }
             }
             catch(Exception ex)
@@ -152,6 +138,8 @@ namespace CookBook
         {
             if (Index!=0)
             {
+                if (volume)
+                    MusicManager.playBookSound();
                 Index--;
                 pbImage.BackgroundImage = recipes[Index].Image;
                 labelName.Text = recipes[Index].Name;
@@ -170,25 +158,13 @@ namespace CookBook
                 else
                     pbForward.Visible = true;
                 if (rtbRecipe.Text.Length > 450)
-                {
-                    pbUp2.Visible = true;
                     pbDown2.Visible = true;
-                }
                 else
-                {
-                    pbUp2.Visible = false;
                     pbDown2.Visible = false;
-                }
                 if (rtbIngredients.Lines.Length > 6)
-                {
-                    pbUp1.Visible = true;
-                    pbDown1.Visible = true;
-                }
+                    pbDown.Visible = true;
                 else
-                {
-                    pbUp1.Visible = false;
-                    pbDown1.Visible = false;
-                }
+                    pbDown.Visible = false;
             }
         }
 
@@ -196,6 +172,8 @@ namespace CookBook
         {
             if (Index != recipes.Count-1)
             {
+                if (volume)
+                    MusicManager.playBookSound();
                 Index++;
                 pbImage.BackgroundImage = recipes[Index].Image;
                 labelName.Text = recipes[Index].Name;
@@ -214,25 +192,13 @@ namespace CookBook
                 else
                     pbBack.Visible = true;
                 if (rtbRecipe.Text.Length > 450)
-                {
-                    pbUp2.Visible = true;
                     pbDown2.Visible = true;
-                }
                 else
-                {
-                    pbUp2.Visible = false;
                     pbDown2.Visible = false;
-                }
                 if (rtbIngredients.Lines.Length > 6)
-                {
-                    pbUp1.Visible = true;
-                    pbDown1.Visible = true;
-                }
+                    pbDown.Visible = true;
                 else
-                {
-                    pbUp1.Visible = false;
-                    pbDown1.Visible = false;
-                }
+                    pbDown.Visible = false;
             }
         }
 
@@ -243,6 +209,8 @@ namespace CookBook
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             this.Close();
         }
 
@@ -253,19 +221,9 @@ namespace CookBook
             this.WndProc(ref m);
         }
 
-        private void pbUp1_MouseHover(object sender, EventArgs e)
-        {
-            t.SetToolTip(pbUp1, "Список ингредиентов можно прокрутить");
-        }
-
         private void pbDown1_MouseHover(object sender, EventArgs e)
         {
-            t.SetToolTip(pbDown1, "Список ингредиентов можно прокрутить");
-        }
-
-        private void pbUp2_MouseHover(object sender, EventArgs e)
-        {
-            t.SetToolTip(pbUp2, "Рецепт можно прокрутить");
+            t.SetToolTip(pbDown, "Список ингредиентов можно прокрутить");
         }
 
         private void pbDown2_MouseHover(object sender, EventArgs e)

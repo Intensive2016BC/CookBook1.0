@@ -17,16 +17,18 @@ namespace CookBook
         public bool exitGame = false;
         public bool cancelGame = false;
         public bool right = false;
+        bool volume;
 
         public List<string> UserWords = new List<string>();
         public int Counter;
         List<string> CorrectOrder = new List<string>();
-        public TestRecipe(Recipe recipe)
+        public TestRecipe(Recipe recipe, bool vol)
         {
             InitializeComponent();
             labRecipeName.Text = recipe.Name;
             labelInstruction.Text = "Выберите пропущенные слова в правильном порядке";
-            TestManager testManager = new TestManager();
+            volume = vol;
+            TestManager testManager = new TestManager(false);
             richTextBox1.Text = testManager.GetDescription(recipe);
             CorrectOrder = testManager.GetWordsFromDescription(recipe);
             Random rnd = new Random();
@@ -48,10 +50,12 @@ namespace CookBook
 
         private void btnAnswer_Click(object sender, EventArgs e)
         {
-            TestManager testManager = new TestManager();
+            if (volume)
+                MusicManager.playSound();
+            TestManager testManager = new TestManager(false);
             if (Counter != CorrectOrder.Count && Counter != 100)
             {
-                InfoForm iform = new InfoForm("Остались незаполненные слова!");
+                InfoForm iform = new InfoForm("Остались незаполненные слова!", volume);
                 iform.Show();
                 return;
             }
@@ -84,12 +88,16 @@ namespace CookBook
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             cancelGame = true;
             DialogResult = DialogResult.OK;
         }
 
         private void btnExitGame_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             exitGame = true;
             DialogResult = DialogResult.OK;
         }
@@ -103,6 +111,8 @@ namespace CookBook
 
         private void btnAgain_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             Random rnd = new Random();
             List<string> words = CorrectOrder.OrderBy(i => rnd.Next()).ToList();
             UserWords.Clear();

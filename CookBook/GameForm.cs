@@ -29,6 +29,8 @@ namespace CookBook
 
         private void buttonCategory_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             CategoryGameForm cgform = new CategoryGameForm(Level, User, this, volume);
             cgform.Show();
             this.Hide();
@@ -36,6 +38,8 @@ namespace CookBook
 
         private void buttonLevel_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             LevelGameForm lgform = new LevelGameForm(Level, User, this, volume);
             lgform.Show();
             this.Hide();
@@ -43,6 +47,8 @@ namespace CookBook
 
         private void buttonRandom_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             RecipeManager recipesManager = new RecipeManager();
             List<Recipe> recipes = recipesManager.GetList();
             List<int> indexes = new List<int>();
@@ -56,7 +62,7 @@ namespace CookBook
                 else
                     indexes.Add(i);
             }
-            TestManager testManager = new TestManager();
+            TestManager testManager = new TestManager(volume);
             if (testManager.StartGame(recipes, indexes, User))
                 ReturnToMenu();
         }
@@ -79,6 +85,8 @@ namespace CookBook
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             ReturnToMenu();
         }
     }

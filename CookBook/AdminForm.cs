@@ -13,10 +13,11 @@ namespace CookBook
 {
     public partial class AdminForm : Form
     {
-        public AdminForm(bool vol)
+        public AdminForm(bool vol, string user)
         {
             InitializeComponent();
             volume = vol;
+            UserName = user;
             dbManager = new DatabaseManager();
             dbManager.CreateDataBase();
             tables.BackgroundColor = Color.AntiqueWhite;
@@ -30,6 +31,7 @@ namespace CookBook
         }
         DatabaseManager dbManager;
         bool volume;
+        string UserName;
 
         private void rbtnUser_CheckedChanged(object sender, EventArgs e)
         {
@@ -65,16 +67,16 @@ namespace CookBook
         {
             ServiceForm f = null;
             if (rbtnUser.Checked == true)
-                f = new ServiceForm("User");
+                f = new ServiceForm("User", volume);
             else if (rbtnCategory.Checked == true)
-                f = new ServiceForm("Category");
+                f = new ServiceForm("Category", volume);
             else if (rbtnRecipe.Checked == true)
-                f = new ServiceForm("Recipe");
+                f = new ServiceForm("Recipe", volume);
             else if (rbtnIngreds.Checked == true)
-                f = new ServiceForm("Ingredients");
+                f = new ServiceForm("Ingredients", volume);
             else
             {
-                InfoForm iform = new InfoForm("Выберите таблицу!");
+                InfoForm iform = new InfoForm("Выберите таблицу!", volume);
                 iform.Show();
                 return;
             }
@@ -94,23 +96,23 @@ namespace CookBook
             id = tables.Rows[tables.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
             if (rbtnUser.Checked == true)
                     {
-                        insert = new ServiceForm("User");
+                        insert = new ServiceForm("User", volume);
                     }
                     else if (rbtnCategory.Checked == true)
                     {
-                        insert = new ServiceForm("Category");
+                        insert = new ServiceForm("Category", volume);
                     }
                     else if (rbtnRecipe.Checked == true)
                     {
-                        insert = new ServiceForm("Recipe");
+                        insert = new ServiceForm("Recipe", volume);
                     }
                     else if (rbtnIngreds.Checked == true)
                     {
-                        insert = new ServiceForm("Ingredients");
+                        insert = new ServiceForm("Ingredients", volume);
                     }
                     else
                     {
-                        InfoForm iform = new InfoForm("Выберите таблицу!");
+                        InfoForm iform = new InfoForm("Выберите таблицу!", volume);
                         iform.Show();
                         return;
                     }
@@ -131,7 +133,7 @@ namespace CookBook
             try
             {
                 {
-                    if (rbtnUser.Checked == true && id !="Admin")
+                    if (rbtnUser.Checked == true && id !="Admin" && id!=UserName)
                         dbManager.Delete("User", "Login='" + id+"'");
                     else if (rbtnCategory.Checked == true)
                         dbManager.Delete("Category", "id=" + id);
@@ -141,14 +143,14 @@ namespace CookBook
                         dbManager.Delete("Ingredients", "id="+id);
                     else
                     {
-                        InfoForm iform = new InfoForm("Выберите таблицу!");
+                        InfoForm iform = new InfoForm("Выберите таблицу!", volume);
                         iform.Show();
                     }
                 }
             }
             catch (Exception ex)
             {
-                InfoForm iform = new InfoForm(ex.Message);
+                InfoForm iform = new InfoForm(ex.Message, volume);
                 iform.Show();
             }
             UpdateTables();

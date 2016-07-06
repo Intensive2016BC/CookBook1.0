@@ -70,7 +70,6 @@
             this.lbRecipeIngreds.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbRecipeIngreds.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbRecipeIngreds.FormattingEnabled = true;
-            this.lbRecipeIngreds.HorizontalScrollbar = true;
             this.lbRecipeIngreds.ItemHeight = 23;
             this.lbRecipeIngreds.Location = new System.Drawing.Point(17, 85);
             this.lbRecipeIngreds.Name = "lbRecipeIngreds";
@@ -85,7 +84,6 @@
             this.lbIngreds.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbIngreds.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbIngreds.FormattingEnabled = true;
-            this.lbIngreds.HorizontalScrollbar = true;
             this.lbIngreds.ItemHeight = 23;
             this.lbIngreds.Location = new System.Drawing.Point(365, 85);
             this.lbIngreds.Name = "lbIngreds";

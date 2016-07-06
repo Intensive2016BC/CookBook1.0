@@ -17,13 +17,21 @@ namespace CookBook
             InitializeComponent();
             DatabaseManager dbManager = new DatabaseManager();
             pass = dbManager.Request("User", "Login = 'Admin'").Rows[0][1].ToString();
+            Password.GotFocus += Password_MouseHover;
         }
         bool Admin = false;
         string pass = "";
         TextBox Password = new TextBox();
 
+        private void Password_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.SetToolTip(Password, "Введите пароль в этой строке");
+        }
+
         private void btnRegistration_Click(object sender, EventArgs e)
         {
+            MusicManager.playSound();
             RegistrationForm registrationForm = new RegistrationForm();
             registrationForm.ShowDialog();
             UserManager userManager = new UserManager();
@@ -32,54 +40,57 @@ namespace CookBook
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            MusicManager.playSound("cartoon008.wav");
-            if (Admin && cbUsers.SelectedItem.ToString() != "Admin")
+            MusicManager.playSound();
+            if (cbUsers.SelectedItem != null)
             {
-                Admin = false;
-                Controls.Remove(Password);
-                Password.Text = "";
-                cbUsers.Location = new Point(104, 224);
-                Menu mainForm = new Menu(cbUsers.SelectedItem.ToString(), this);
-                mainForm.Show();
-                this.Hide();
-                return;
-            } 
-            if (!Admin)
-            {
-                if (cbUsers.SelectedItem.ToString() == "Admin")
+                if (Admin && cbUsers.SelectedItem.ToString() != "Admin")
                 {
-                    Admin = true;
-                    cbUsers.Location = new Point(cbUsers.Location.X, cbUsers.Location.Y-40);
-                    Password.Location = new Point(cbUsers.Location.X, cbUsers.Location.Y+40);
-                    Password.Height = 31;
-                    Password.Width = 300;
-                    Password.Font = new Font("Candara", 14, FontStyle.Regular);
-                    Controls.Add(Password);
-                }
-                else
-                {
-                    Menu mainForm = new Menu(cbUsers.SelectedItem.ToString(), this);
-                    mainForm.Show();
-                    this.Hide();
-                }
-            }
-            else
-            {
-                if (Password.Text == pass)
-                {
-                    Menu mainForm = new Menu("Admin", this);
                     Admin = false;
                     Controls.Remove(Password);
                     Password.Text = "";
                     cbUsers.Location = new Point(104, 224);
+                    Menu mainForm = new Menu(cbUsers.SelectedItem.ToString(), this);
                     mainForm.Show();
                     this.Hide();
+                    return;
+                }
+                if (!Admin)
+                {
+                    if (cbUsers.SelectedItem.ToString() == "Admin")
+                    {
+                        Admin = true;
+                        cbUsers.Location = new Point(cbUsers.Location.X, cbUsers.Location.Y - 40);
+                        Password.Location = new Point(cbUsers.Location.X, cbUsers.Location.Y + 40);
+                        Password.Height = 31;
+                        Password.Width = 300;
+                        Password.Font = new Font("Candara", 14, FontStyle.Regular);
+                        Controls.Add(Password);
+                    }
+                    else
+                    {
+                        Menu mainForm = new Menu(cbUsers.SelectedItem.ToString(), this);
+                        mainForm.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
-                    InfoForm iform = new InfoForm("Неверный пароль!");
-                    iform.Show();
-                    Password.Text = "";
+                    if (Password.Text == pass)
+                    {
+                        Menu mainForm = new Menu("Admin", this);
+                        Admin = false;
+                        Controls.Remove(Password);
+                        Password.Text = "";
+                        cbUsers.Location = new Point(104, 224);
+                        mainForm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        InfoForm iform = new InfoForm("Неверный пароль!", true);
+                        iform.Show();
+                        Password.Text = "";
+                    }
                 }
             }
         }
@@ -110,6 +121,7 @@ namespace CookBook
         {
             UserManager userManager = new UserManager();
             cbUsers.DataSource = userManager.GetList().Select(u => u.Login).ToList();
+            cbUsers.SelectedIndex = -1;
         }
 
         private void AuthorizeForm_MouseDown(object sender, MouseEventArgs e)
@@ -117,6 +129,28 @@ namespace CookBook
             base.Capture = false;
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
             this.WndProc(ref m);
+        }
+
+        private void cbUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Admin && cbUsers.Text != "Admin")
+            {
+                Admin = false;
+                Controls.Remove(Password);
+                Password.Text = "";
+                cbUsers.Location = new Point(104, 224);
+                return;
+            }
+            if (!Admin && cbUsers.Text == "Admin" && cbUsers.SelectedIndex != -1)
+            {
+                Admin = true;
+                cbUsers.Location = new Point(cbUsers.Location.X, cbUsers.Location.Y - 40);
+                Password.Location = new Point(cbUsers.Location.X, cbUsers.Location.Y + 40);
+                Password.Height = 31;
+                Password.Width = 300;
+                Password.Font = new Font("Candara", 14, FontStyle.Regular);
+                Controls.Add(Password);
+            }
         }
     }
 }

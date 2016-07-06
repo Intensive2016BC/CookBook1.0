@@ -52,6 +52,8 @@ namespace CookBook
 
         private void btnUserChange_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             auth.GetUsers();
             auth.Show();
             closing = true;
@@ -65,6 +67,8 @@ namespace CookBook
 
         private void btnGame_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             GameForm gform = new GameForm(int.Parse(lblUserLevel.Text.Split(' ')[1]), this, UserName, volume);
             gform.Show();
             this.Hide();
@@ -72,6 +76,8 @@ namespace CookBook
 
         private void btnCookBook_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             CategoriesForm cform = new CategoriesForm(int.Parse(lblUserLevel.Text.Split(' ')[1]), this, volume);
             cform.Show();
             this.Hide();
@@ -79,7 +85,9 @@ namespace CookBook
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            AdminForm aform = new AdminForm(volume);
+            if (volume)
+                MusicManager.playSound();
+            AdminForm aform = new AdminForm(volume, UserName);
             aform.Show();
         }
 

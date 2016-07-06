@@ -7,16 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CookBook.Models;
+using CookBook.Managers;
 
 namespace CookBook
 {
     public partial class TestName : Form
     {
-        public TestName(Image image, string name, List<Recipe> recipes)
+        public TestName(Image image, string name, List<Recipe> recipes, bool vol)
         {
             InitializeComponent();
             RName = name;
             pbImage.Image = image;
+            volume = vol;
             Random rand = new Random();
             if (recipes.Count > 10)
             {
@@ -45,9 +47,12 @@ namespace CookBook
         public bool exitGame = false;
         public bool cancelGame = false;
         public bool answer = false;
+        bool volume;
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             if (cbVars.Text == RName)
                 right = true;
             answer = true;
@@ -56,12 +61,16 @@ namespace CookBook
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             cancelGame = true;
             DialogResult = DialogResult.OK;
         }
 
         private void btnExitGame_Click(object sender, EventArgs e)
         {
+            if (volume)
+                MusicManager.playSound();
             exitGame = true;
             DialogResult = DialogResult.OK;
         }

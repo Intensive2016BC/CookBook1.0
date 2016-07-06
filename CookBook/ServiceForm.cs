@@ -25,10 +25,12 @@ namespace CookBook
         RichTextBox[] bigFields = new RichTextBox[2];
         Button buttonOk = new Button();
         Button buttonCancel = new Button();
+        bool Volume;
         
-        public ServiceForm(string tablename)
+        public ServiceForm(string tablename, bool volume)
         {
             entity = tablename;
+            Volume = volume;
             InitializeComponent();
             this.AutoSize = true;
             this.BackColor = Color.Peru;
@@ -173,7 +175,7 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            InfoForm iform = new InfoForm(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message, Volume);
                             iform.Show();
                         }
                         break;
@@ -198,7 +200,7 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            InfoForm iform = new InfoForm(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message, Volume);
                             iform.Show();
                         }
                         break;
@@ -227,7 +229,7 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            InfoForm iform = new InfoForm(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message, Volume);
                             iform.Show();
                         }
                         break;
@@ -248,7 +250,7 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            InfoForm iform = new InfoForm(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message, Volume);
                             iform.Show();
                         }
                         break;
@@ -328,7 +330,7 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            InfoForm iform = new InfoForm(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message, Volume);
                             iform.Show();
                         }
                         break;
@@ -375,7 +377,7 @@ namespace CookBook
                         }
                         catch (Exception ex)
                         {
-                            InfoForm iform = new InfoForm(ex.Message);
+                            InfoForm iform = new InfoForm(ex.Message, Volume);
                             iform.Show();
                         }
                         break;
